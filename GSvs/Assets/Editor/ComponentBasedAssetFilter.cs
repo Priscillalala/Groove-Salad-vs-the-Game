@@ -16,8 +16,6 @@ namespace GSvs.Editor
     public class ComponentBasedAssetFilter : AssetFilterBase
     {
         public TypeReferenceListableProperty componentType = new TypeReferenceListableProperty();
-        public bool matchWithDerivedComponentTypes = true;
-        public bool searchChildren = false;
 
         private readonly List<string> invalidAssemblyQualifiedNames = new List<string>();
         private readonly HashSet<string> matches = new HashSet<string>();
@@ -101,11 +99,8 @@ namespace GSvs.Editor
                     result.Append(" )");
                 }
 
-                result.Insert(0, "Has Component: ");
+                result.Insert(0, "Component: ");
             }
-
-            if (matchWithDerivedComponentTypes)
-                result.Append(" or derived components");
 
             return result.ToString();
         }
