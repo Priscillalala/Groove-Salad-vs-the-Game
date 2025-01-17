@@ -1,4 +1,3 @@
-using SmartAddresser.Editor.Core.Models.Shared.AssetGroups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,19 +80,5 @@ namespace GSvs.Editor
         {
             OnItemSelected?.Invoke((Item)item);
         }
-
-        /*public class Item : AdvancedDropdownItem
-        {
-            public Item(string displayName, Type type) : base(
-                displayName)
-            {
-                if (type != null)
-                {
-                    TypeReference = TypeReference.Create(type);
-                }
-            }
-
-            public TypeReference TypeReference;
-        }*/
     }
 }

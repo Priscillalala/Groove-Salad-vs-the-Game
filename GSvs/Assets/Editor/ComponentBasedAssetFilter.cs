@@ -19,18 +19,14 @@ namespace GSvs.Editor
         public bool matchWithDerivedComponentTypes = true;
         public bool searchChildren = false;
 
-        private readonly List<string> _invalidAssemblyQualifiedNames = new List<string>();
-        private readonly List<Type> _validComponentTypes = new List<Type>();
-        private readonly Dictionary<Type, bool> _resultCache = new Dictionary<Type, bool>();
-        private readonly object _resultCacheLocker = new object();
-        private readonly List<Component> _componentsList = new List<Component>();
-
+        private readonly List<string> invalidAssemblyQualifiedNames = new List<string>();
         private readonly HashSet<string> matches = new HashSet<string>();
 
         public override void SetupForMatching()
         {
-            _validComponentTypes.Clear();
-            _invalidAssemblyQualifiedNames.Clear();
+            invalidAssemblyQualifiedNames.Clear(); 
+            matches.Clear();
+
             foreach (var typeRef in componentType)
             {
                 if (typeRef == null)
@@ -42,23 +38,19 @@ namespace GSvs.Editor
                 var assemblyQualifiedName = typeRef.AssemblyQualifiedName;
                 var type = Type.GetType(assemblyQualifiedName);
                 if (type == null)
-                    _invalidAssemblyQualifiedNames.Add(assemblyQualifiedName);
-                else
-                    _validComponentTypes.Add(type);
-            }
-
-            _resultCache.Clear();
-
-            matches.Clear();
-            foreach (var validComponentType in _validComponentTypes)
-            {
-                foreach (var result in SearchService.Request($"p: prefab=any t={validComponentType.FullName}", SearchFlags.Synchronous))
                 {
-                    string assetPath = SearchUtils.GetAssetPath(result);
-                    if (!string.IsNullOrEmpty(assetPath))
+                    invalidAssemblyQualifiedNames.Add(assemblyQualifiedName);
+                }
+                else
+                {
+                    foreach (var result in SearchService.Request($"p: prefab=any t={type.FullName}", SearchFlags.Synchronous))
                     {
-                        Debug.Log($"Matched {assetPath}");
-                        matches.Add(assetPath);
+                        string assetPath = SearchUtils.GetAssetPath(result);
+                        if (!string.IsNullOrEmpty(assetPath))
+                        {
+                            Debug.Log($"Matched {assetPath}");
+                            matches.Add(assetPath);
+                        }
                     }
                 }
             }
@@ -66,11 +58,11 @@ namespace GSvs.Editor
 
         public override bool Validate(out AssetFilterValidationError error)
         {
-            if (_invalidAssemblyQualifiedNames.Count >= 1)
+            if (invalidAssemblyQualifiedNames.Count >= 1)
             {
                 error = new AssetFilterValidationError(
                     this,
-                    _invalidAssemblyQualifiedNames
+                    invalidAssemblyQualifiedNames
                         .Select(qualifiedName => $"Invalid type reference: {qualifiedName}")
                         .ToArray());
                 return false;
@@ -83,67 +75,6 @@ namespace GSvs.Editor
         public override bool IsMatch(string assetPath, Type assetType, bool isFolder)
         {
             return matches.Contains(assetPath);
-            if (assetType != typeof(GameObject))
-            {
-                return false;
-            }
-
-            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
-            if (!prefab || !PrefabUtility.IsPartOfPrefabAsset(prefab))
-            {
-                return false;
-            }
-
-            if (searchChildren)
-            {
-                prefab.GetComponentsInChildren(_componentsList);
-            }
-            else
-            {
-                prefab.GetComponents(_componentsList);
-            }
-
-            bool result = false;
-            foreach (Component component in _componentsList)
-            {
-                Type componentType = component.GetType();
-
-                if (_resultCache.TryGetValue(componentType, out result))
-                {
-                    if (result)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-
-                foreach (Type validComponentType in _validComponentTypes)
-                {
-                    if (componentType == validComponentType)
-                    {
-                        result = true;
-                        break;
-                    }
-
-                    if (matchWithDerivedComponentTypes && componentType.IsSubclassOf(validComponentType))
-                    {
-                        result = true;
-                        break;
-                    }
-                }
-
-                lock (_resultCacheLocker)
-                {
-                    _resultCache.Add(componentType, result);
-                }
-            }
-
-            _componentsList.Clear();
-
-            return result;
         }
 
         public override string GetDescription()
