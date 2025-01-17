@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c113ff064b10c427fb3a071e46ace37d, type: 3}
+  m_Name: LayoutRuleData
+  m_EditorClassIdentifier: 
+  _layoutRule:
+    _settings:
+      _excludeUnversioned:
+        _value: 0
+      _versionExpression:
+        _value: 
+    _addressRules:
+      _internalList:
+      - _id: a7fd67c0-92c7-4935-8f00-e4f44e855987
+        _addressableGroup: {fileID: 11400000, guid: 7a72705b781be764d925972692973bcc, type: 2}
+        _control:
+          _value: 0
+        _assetGroups:
+          _internalList:
+          - _id: 3230554f-c892-4525-a4f4-78298b1ae159
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList: []
+        _addressProviderInternal:
+          rid: 1722732801224343552
+      - _id: 0555d160-8c54-4ef1-b53d-f41eb5ae30d0
+        _addressableGroup: {fileID: 11400000, guid: bf98907fce45f464cb364be3e5fe0f6e, type: 2}
+        _control:
+          _value: 1
+        _assetGroups:
+          _internalList:
+          - _id: 912baaa4-7897-431a-b822-33634e9e3cb1
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 1722732801224343556
+        _addressProviderInternal:
+          rid: 1722732801224343553
+    _labelRules:
+      _internalList:
+      - _id: 77cdda08-baa4-497b-8a6e-fa5ae85a3a7f
+        _name:
+          _value: GSvs.RoR2
+        _assetGroups:
+          _internalList:
+          - _id: 9099916a-f113-4406-aef7-ef7c4d9bc54b
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 1722732801224343558
+        _labelProviderInternal:
+          rid: 1722732801224343557
+      - _id: b2802046-bf9a-4222-9783-fd3d2fb4774b
+        _name:
+          _value: ItemDef
+        _assetGroups:
+          _internalList:
+          - _id: 97e83702-218f-4db7-96e6-33d1dc7cb44d
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 1722732801224343560
+        _labelProviderInternal:
+          rid: 1722732801224343559
+      - _id: 73e4a1ef-cb8c-4ab4-87b0-e8d251318b0a
+        _name:
+          _value: Light
+        _assetGroups:
+          _internalList:
+          - _id: 3cad2bac-40a6-41ef-ae82-ea4d775b3bf7
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 1722732802837839872
+        _labelProviderInternal:
+          rid: 1722732801224343561
+    _versionRules:
+      _internalList: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1722732801224343552
+      type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules, asm: SmartAddresser.Editor}
+      data:
+        _source: 2
+        _replaceWithRegex: 0
+        _pattern: 
+        _replacement: 
+    - rid: 1722732801224343553
+      type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules, asm: SmartAddresser.Editor}
+      data:
+        _source: 2
+        _replaceWithRegex: 1
+        _pattern: ^Assets\/
+        _replacement: 
+    - rid: 1722732801224343556
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 9a7f0865-c80c-4663-8deb-820902fd1a7c
+        _folderTargetingMode: 0
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 102900000, guid: 411b8e8abd70f5e40978474af53aa47e, type: 3}
+    - rid: 1722732801224343557
+      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules, asm: SmartAddresser.Editor}
+      data:
+        _label: ContentPack:GSvs.RoR2
+    - rid: 1722732801224343558
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 6694a700-9d21-48db-b71b-88ce4a985205
+        _folderTargetingMode: 0
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 102900000, guid: 411b8e8abd70f5e40978474af53aa47e, type: 3}
+    - rid: 1722732801224343559
+      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules, asm: SmartAddresser.Editor}
+      data:
+        _label: ItemDef
+    - rid: 1722732801224343560
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: ee9c3d77-f835-413b-a1e6-7d17ac951c5c
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: ItemDef
+            _fullName: RoR2.ItemDef
+            _assemblyQualifiedName: RoR2.ItemDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732801224343561
+      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules, asm: SmartAddresser.Editor}
+      data:
+        _label: Light
+    - rid: 1722732802837839872
+      type: {class: ComponentBasedAssetFilter, ns: GSvs.Editor, asm: GSvs.Editor}
+      data:
+        _id: 9002651d-3d28-4c96-83e0-bc86df2d187e
+        componentType:
+          _isListMode: 0
+          _values:
+          - _name: ProjectileController
+            _fullName: RoR2.Projectile.ProjectileController
+            _assemblyQualifiedName: RoR2.Projectile.ProjectileController, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        matchWithDerivedComponentTypes: 1
+        searchChildren: 0

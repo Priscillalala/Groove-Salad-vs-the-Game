@@ -6,6 +6,7 @@ using Path = System.IO.Path;
 using UnityEngine.AddressableAssets;
 using RoR2.ExpansionManagement;
 using RoR2.ContentManagement;
+using GSvs.RoR2;
 
 [module: UnverifiableCode]
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -13,7 +14,7 @@ using RoR2.ContentManagement;
 #pragma warning restore CS0618 // Type or member is obsolete
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
 
-namespace CatchTheRainbow
+namespace GSvs
 {
     [BepInPlugin(GUID, NAME, VERSION)]
     public class GSvsPlugin : BaseUnityPlugin
@@ -39,7 +40,7 @@ namespace CatchTheRainbow
                 Logger.LogMessage(key);
             }
 
-            ContentManager.collectContentPackProviders += add => add(new GSvsContent());
+            ContentManager.collectContentPackProviders += add => add(new GSvsRoR2Content());
         }
     }
 }

@@ -37,7 +37,7 @@ MonoBehaviour:
   m_RemoteCatalogLoadPath:
     m_Id: 1c5c90052148d0c4882414e9389b371d
   m_ContentStateBuildPath: 
-  m_overridePlayerVersion: CatchTheRainbow
+  m_overridePlayerVersion: Groove_Salad_vs_the_Game
   m_GroupAssets:
   - {fileID: 11400000, guid: 7a72705b781be764d925972692973bcc, type: 2}
   - {fileID: 11400000, guid: bf98907fce45f464cb364be3e5fe0f6e, type: 2}
@@ -57,7 +57,7 @@ MonoBehaviour:
       - m_Id: 313b617a92d280641beb70b5a0ddcb2b
         m_Value: ThunderKit/AddressablesStaging
       - m_Id: 1c5c90052148d0c4882414e9389b371d
-        m_Value: '{CatchTheRainbow.CatchTheRainbowPlugin.RuntimeAddressablesLocation}'
+        m_Value: '{GSvs.GSvsPlugin.RuntimeAddressablesLocation}'
       - m_Id: 1284734b112d02149a2ce57701e5d80e
         m_Value: 
       - m_Id: 1ba50c0359126024bbc6e1e2be60f5f8
@@ -82,6 +82,9 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - ContentPack:GSvs.RoR2
+    - ItemDef
+    - Light
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 62d967486da928f46a2a805b956f88b1, type: 2}

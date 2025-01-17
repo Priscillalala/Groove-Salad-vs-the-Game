@@ -128,6 +128,13 @@
       },
       "hash": "f755c49eaa02bdd409a3e1f63788008abea55567"
     },
+    "jp.co.cyberagent.smartaddresser": {
+      "version": "https://github.com/CyberAgentGameEntertainment/SmartAddresser.git?path=/Assets/SmartAddresser#1.0.9",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "96394ae6598399574b7eb261ce2c454e95301ce2"
+    },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
       "depth": 0,

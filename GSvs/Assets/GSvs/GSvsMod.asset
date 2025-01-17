@@ -66,5 +66,4 @@ MonoBehaviour:
   Name: Groove_Salad_vs_the_Game
   Description: This is a modern-day mod
   Version: 1.0.0
-  Dependencies:
-  - {fileID: 0}
+  Dependencies: []

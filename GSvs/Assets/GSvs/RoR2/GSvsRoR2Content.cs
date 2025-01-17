@@ -5,13 +5,13 @@ using RoR2.ContentManagement;
 using System.Collections;
 using RoR2;
 
-namespace CatchTheRainbow
+namespace GSvs.RoR2
 {
-    public class GSvsContent : IContentPackProvider
+    public class GSvsRoR2Content : IContentPackProvider
     {
         private readonly ContentPack contentPack = new ContentPack();
 
-        public string identifier => GSvsPlugin.GUID;
+        public string identifier => "GSvs.RoR2";
 
         public IEnumerator LoadStaticContentAsync(LoadStaticContentAsyncArgs args)
         {

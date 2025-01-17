@@ -10,13 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: GSvs
+  m_Name: GSvs.RoR2
   m_EditorClassIdentifier: 
-  m_GroupName: GSvs
+  m_GroupName: GSvs.RoR2
   m_Data:
     m_SerializedData: []
   m_GUID: 74f16d4d5221eb94b94a0fb63b5ccc06
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 9c5282b5e93b08e4bb4ed80814a7a9cd
+    m_Address: GSvs/RoR2/inner/New Item Def.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
+    - ItemDef
+  - m_GUID: 2be8a487f66fdde499b2a4dcf47ede80
+    m_Address: GSvs/RoR2/inner/TestPrefab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:
