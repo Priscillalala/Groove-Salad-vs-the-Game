@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
+  m_Name: AddressableAssetSettings
+  m_EditorClassIdentifier: 
+  m_DefaultGroup: 74f16d4d5221eb94b94a0fb63b5ccc06
+  m_CachedHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_OptimizeCatalogSize: 0
+  m_BuildRemoteCatalog: 1
+  m_BundleLocalCatalog: 0
+  m_CatalogRequestsTimeout: 0
+  m_DisableCatalogUpdateOnStart: 1
+  m_IgnoreUnsupportedFilesInBuild: 0
+  m_UniqueBundleIds: 0
+  m_NonRecursiveBuilding: 1
+  m_maxConcurrentWebRequests: 500
+  m_ContiguousBundles: 0
+  m_StripUnityVersionFromBundleBuild: 0
+  m_DisableVisibleSubAssetRepresentations: 0
+  m_ShaderBundleNaming: 0
+  m_ShaderBundleCustomNaming: 
+  m_MonoScriptBundleNaming: 0
+  m_MonoScriptBundleCustomNaming: 
+  m_RemoteCatalogBuildPath:
+    m_Id: 313b617a92d280641beb70b5a0ddcb2b
+  m_RemoteCatalogLoadPath:
+    m_Id: 1c5c90052148d0c4882414e9389b371d
+  m_ContentStateBuildPath: 
+  m_overridePlayerVersion: CatchTheRainbow
+  m_GroupAssets:
+  - {fileID: 11400000, guid: 7a72705b781be764d925972692973bcc, type: 2}
+  - {fileID: 11400000, guid: bf98907fce45f464cb364be3e5fe0f6e, type: 2}
+  m_BuildSettings:
+    m_CompileScriptsInVirtualMode: 0
+    m_CleanupStreamingAssetsAfterBuilds: 1
+    m_LogResourceManagerExceptions: 1
+    m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
+  m_ProfileSettings:
+    m_Profiles:
+    - m_InheritedParent: 
+      m_Id: 16fabdfe414ac8349a78e20ee7997d11
+      m_ProfileName: Default
+      m_Values:
+      - m_Id: ad5987852651ce144844572bd1576a1d
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 313b617a92d280641beb70b5a0ddcb2b
+        m_Value: ThunderKit/AddressablesStaging
+      - m_Id: 1c5c90052148d0c4882414e9389b371d
+        m_Value: '{CatchTheRainbow.CatchTheRainbowPlugin.RuntimeAddressablesLocation}'
+      - m_Id: 1284734b112d02149a2ce57701e5d80e
+        m_Value: 
+      - m_Id: 1ba50c0359126024bbc6e1e2be60f5f8
+        m_Value: 
+    m_ProfileEntryNames:
+    - m_Id: ad5987852651ce144844572bd1576a1d
+      m_Name: BuildTarget
+      m_InlineUsage: 0
+    - m_Id: 313b617a92d280641beb70b5a0ddcb2b
+      m_Name: LocalBuildPath
+      m_InlineUsage: 0
+    - m_Id: 1c5c90052148d0c4882414e9389b371d
+      m_Name: LocalLoadPath
+      m_InlineUsage: 0
+    - m_Id: 1284734b112d02149a2ce57701e5d80e
+      m_Name: RemoteBuildPath
+      m_InlineUsage: 0
+    - m_Id: 1ba50c0359126024bbc6e1e2be60f5f8
+      m_Name: RemoteLoadPath
+      m_InlineUsage: 0
+    m_ProfileVersion: 1
+  m_LabelTable:
+    m_LabelNames:
+    - default
+  m_SchemaTemplates: []
+  m_GroupTemplateObjects:
+  - {fileID: 11400000, guid: 62d967486da928f46a2a805b956f88b1, type: 2}
+  m_InitializationObjects: []
+  m_CertificateHandlerType:
+    m_AssemblyName: 
+    m_ClassName: 
+  m_ActivePlayerDataBuilderIndex: 4
+  m_DataBuilders:
+  - {fileID: 11400000, guid: 43bb1bcee461c3f468d34b3da72fb5b7, type: 2}
+  - {fileID: 11400000, guid: 8ad3a5c864b58194781ba65ec10f49b7, type: 2}
+  - {fileID: 11400000, guid: f09abc450b47e32469857117ba054a01, type: 2}
+  - {fileID: 11400000, guid: 6f02e1213642cbe46aee632df1a1d924, type: 2}
+  - {fileID: 11400000, guid: fdb53e640bd719f4ab0922f416e6b4fc, type: 2}
+  m_ActiveProfileId: 16fabdfe414ac8349a78e20ee7997d11
+  m_HostingServicesManager:
+    m_HostingServiceInfos: []
+    m_Settings: {fileID: 11400000}
+    m_NextInstanceId: 0
+    m_RegisteredServiceTypeRefs: []
