@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: a57e3e3e57912f1479617cbd028f2f3d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: Calm Water/CalmWater - DX11.shader
+    assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results:
+  - asset: {fileID: 1727552158455393044, guid: a57e3e3e57912f1479617cbd028f2f3d, type: 3}
+    identifier: 2167548438033953319
+    internalBundleName: archive:/CAB-64acf07ab1009dd7f4d1c689298d514c/CAB-64acf07ab1009dd7f4d1c689298d514c
+  - asset: {fileID: -8115069819622045131, guid: a57e3e3e57912f1479617cbd028f2f3d, type: 3}
+    identifier: 8563125258555601455
+    internalBundleName: archive:/CAB-64acf07ab1009dd7f4d1c689298d514c/CAB-64acf07ab1009dd7f4d1c689298d514c
+  bundleDependencies:
+  - primaryKey: calmwater_shader_assets_all_cec8a6b258506b52a21ad32a867a8de7.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\calmwater_shader_assets_all.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: cec8a6b258506b52a21ad32a867a8de7
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: 7458b7e18f4d81269ff29e59ecc7bd15
+      assetLoadMode: 0
+      bundleSize: 183481
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0

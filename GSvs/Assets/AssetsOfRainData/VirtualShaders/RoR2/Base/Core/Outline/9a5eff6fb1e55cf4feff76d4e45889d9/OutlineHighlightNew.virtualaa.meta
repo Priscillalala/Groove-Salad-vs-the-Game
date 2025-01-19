@@ -1,0 +1,51 @@
+fileFormatVersion: 2
+guid: 93f917f3eecddeb469e5a0b287d1ca15
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: RoR2/Base/Core/Outline/OutlineHighlightNew.shader
+    assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results:
+  - asset: {fileID: -6883762483148458099, guid: 93f917f3eecddeb469e5a0b287d1ca15, type: 3}
+    identifier: -6760339192691915049
+    internalBundleName: archive:/CAB-b2607e27d1cd637864f5d1592c742367/CAB-b2607e27d1cd637864f5d1592c742367
+  bundleDependencies:
+  - primaryKey: ror2-base-core-outline_assets_all_98cfc81e7cd041d17dc6bd807c95177c.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\ror2-base-core-outline_assets_all.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: 98cfc81e7cd041d17dc6bd807c95177c
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: b6b3ea6a7689e543c67e77b0cbb0f0e5
+      assetLoadMode: 0
+      bundleSize: 28786
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0
+  - primaryKey: calmwater_unitybuiltinshaders_fed83c1247c2277221f768aec7f4efc3.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\calmwater_unitybuiltinshaders.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: fed83c1247c2277221f768aec7f4efc3
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: 43129cb5da712970f0cbf8f81e6aca80_unitybuiltinshaders
+      assetLoadMode: 0
+      bundleSize: 2109941
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0

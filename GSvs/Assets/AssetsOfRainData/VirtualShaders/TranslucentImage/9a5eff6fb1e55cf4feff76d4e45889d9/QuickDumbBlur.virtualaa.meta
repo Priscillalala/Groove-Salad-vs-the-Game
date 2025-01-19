@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: af0fbc1f1787e7f4eb01b0a1474cb167
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: TranslucentImage/QuickDumbBlur.shader
+    assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results:
+  - asset: {fileID: -3742594170734191498, guid: af0fbc1f1787e7f4eb01b0a1474cb167, type: 3}
+    identifier: 6720795507525571316
+    internalBundleName: archive:/CAB-1e1d84457a93ff24aa455bb445263971/CAB-1e1d84457a93ff24aa455bb445263971
+  bundleDependencies:
+  - primaryKey: translucentimage_shader_assets_all_9f69d94230cf51796c87850765d500a1.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\translucentimage_shader_assets_all.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: 9f69d94230cf51796c87850765d500a1
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: fbab0313f4e7089e6c42e85a77429792
+      assetLoadMode: 0
+      bundleSize: 22953
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0

@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 7596c2cb3c1ecdb46874737de74a403c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF SSD.shader
+    assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results:
+  - asset: {fileID: -569259235168370288, guid: 7596c2cb3c1ecdb46874737de74a403c, type: 3}
+    identifier: -5776358411657469793
+    internalBundleName: archive:/CAB-94538234877da4cffc93657050252660/CAB-94538234877da4cffc93657050252660
+  - asset: {fileID: 3082371110253522156, guid: 7596c2cb3c1ecdb46874737de74a403c, type: 3}
+    identifier: -9155214179205432183
+    internalBundleName: archive:/CAB-94538234877da4cffc93657050252660/CAB-94538234877da4cffc93657050252660
+  bundleDependencies:
+  - primaryKey: textmeshpro-formerresources-shaders_assets_all_1e33ee7eded2fc56267341a6c2e6934c.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\textmeshpro-formerresources-shaders_assets_all.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: 1e33ee7eded2fc56267341a6c2e6934c
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: be83c3e727c92050185e896b04f98fc2
+      assetLoadMode: 0
+      bundleSize: 74177
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0

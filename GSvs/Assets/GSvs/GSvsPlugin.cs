@@ -44,7 +44,8 @@ namespace GSvs
 
             foreach (var attribute in SearchableAttribute.GetInstances<ContentModificationAttribute>())
             {
-                ((IContentModification)Activator.CreateInstance((Type)attribute.target)).Initialize();
+                IContentModification contentModification = (IContentModification)Activator.CreateInstance((Type)attribute.target);
+                contentModification.Initialize();
             }
 
             ContentManager.collectContentPackProviders += add => add(new GSvsRoR2Content());

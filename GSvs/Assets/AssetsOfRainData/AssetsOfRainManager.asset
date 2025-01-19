@@ -1,0 +1,244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed8f8b7291ffcd44bb5bc9d601ca1c1, type: 3}
+  m_Name: AssetsOfRainManager
+  m_EditorClassIdentifier: 
+  virtualShaders:
+    directory: Assets/AssetsOfRainData/VirtualShaders
+    assetRequests:
+    - primaryKey: Calm Water/UnderWaterFog.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Calm Water/CalmWater - DoubleSided.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Calm Water/CalmWater - DX11 - DoubleSided.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Calm Water/CalmWater - DX11.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Calm Water/CalmWater - SingleSided.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Calm Water/ProjectorCaustics.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Decalicious/DecaliciousGameObjectID.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Decalicious/DecaliciousDeferredDecal.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: Decalicious/DecaliciousUnlitDecal.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TranslucentImage/DownTent.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TranslucentImage/EfficientBlur.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TranslucentImage/FillCrop.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TranslucentImage/QuickDumbBlur.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TranslucentImage/TranslucentImage.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: NGSS/NGSS_ContactShadows.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: NGSS/NGSS_Directional.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: NGSS/NGSS_FrustumShadows.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Core/CameraEffects/HGScreenDamage.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Core/Outline/OutlineHighlightNew.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Core/Outline/OutlineHighlightSurf.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/skymeadow/Fill-Linear.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HopooSSR.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/RampFog.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/SceneTint.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/SobelOutline.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/SobelRain.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGOnTop.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGSnowTopped.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGStandard.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGStandardWithDistortion.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGTriplanarTerrainBlend.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGWavyCloth.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGDistantWater.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGFlag.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGGrass.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGWaterfall.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGCloudRemap.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGDamageNumber.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGDistortion.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGForwardPlanet.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGIntersectionCloudRemap.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGOpaqueCloudRemap.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGSolidParallax.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGVertexOnly.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/Internal-ScreenSpaceShadows_Cheaper.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/MobileBlur.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/DoublePassUnlitTemplate.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/DamageIndicator.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGOutlineHighlight.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGScopeShader.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGSobelBuffer.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGVisionLimit.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HealthBar.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGUIAnimateAlpha.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGUIBarRemap.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGUIBlur.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGUICustomBlend.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGUIIgnoreZ.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Shaders/HGUIOverbrighten.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_Bitmap.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_Bitmap-Custom-Atlas.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_Bitmap-Mobile.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF Overlay.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF SSD.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF-Mobile Masking.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF-Mobile Overlay.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF-Mobile SSD.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF-Mobile.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF-Surface.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_SDF-Surface-Mobile.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: TextMesh Pro/FormerResources/Shaders/TMP_Sprite.shader
+      assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  virtualAssets:
+    directory: Assets/AssetsOfRainData/VirtualAssets
+    assetRequests:
+    - primaryKey: RoR2/DLC2/Items/LowerPricedChests/mdlSaleStar.fbx
+      assemblyQualifiedTypeName: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/DLC2/Items/LowerPricedChests/matSaleStar.mat
+      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  ignoredShaderDirectories:
+  - Hopoo Games/Optimized/Switch/

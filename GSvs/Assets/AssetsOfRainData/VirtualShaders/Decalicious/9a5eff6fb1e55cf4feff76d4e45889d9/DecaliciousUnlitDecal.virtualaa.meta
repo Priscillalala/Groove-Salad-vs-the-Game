@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 079cda89d1d7b8d4ebcbcc3e81718f74
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: Decalicious/DecaliciousUnlitDecal.shader
+    assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results:
+  - asset: {fileID: 3789317722678018425, guid: 079cda89d1d7b8d4ebcbcc3e81718f74, type: 3}
+    identifier: 4271774046593336705
+    internalBundleName: archive:/CAB-9702bedcae279c83002e8faf9527113c/CAB-9702bedcae279c83002e8faf9527113c
+  bundleDependencies:
+  - primaryKey: decalicious_shader_assets_all_4d87677c95adfe9ba68b4a34e0dae0dc.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\decalicious_shader_assets_all.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: 4d87677c95adfe9ba68b4a34e0dae0dc
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: 72644058ff7ee583838bd535a0e311f7
+      assetLoadMode: 0
+      bundleSize: 25921
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0

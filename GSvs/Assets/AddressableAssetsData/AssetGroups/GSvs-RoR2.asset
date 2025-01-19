@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 74f16d4d5221eb94b94a0fb63b5ccc06
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: e42b89f02daacc847ad1e639b71ee174
+    m_Address: GSvs/RoR2/Items/SaleStar/SaleStarChestAttachment.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:

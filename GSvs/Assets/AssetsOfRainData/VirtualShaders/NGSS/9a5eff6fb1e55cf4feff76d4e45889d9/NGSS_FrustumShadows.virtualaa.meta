@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: e9c86fe8a22f4e948af27ce19da7ffa0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: NGSS/NGSS_FrustumShadows.shader
+    assemblyQualifiedTypeName: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results:
+  - asset: {fileID: 8869311982498808805, guid: e9c86fe8a22f4e948af27ce19da7ffa0, type: 3}
+    identifier: -4339782914459764037
+    internalBundleName: archive:/CAB-4287443ef1664f47d15f8e2c69cd3a9d/CAB-4287443ef1664f47d15f8e2c69cd3a9d
+  bundleDependencies:
+  - primaryKey: ngss_shader_assets_all_e39cca4ef11762ca53d546be5c8732fb.bundle
+    internalId: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}\StandaloneWindows64\ngss_shader_assets_all.bundle'
+    providerId: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    data:
+      hash: e39cca4ef11762ca53d546be5c8732fb
+      crc: 0
+      timeout: 0
+      chunkedTransfer: 0
+      redirectLimit: -1
+      retryCount: 0
+      bundleName: 30767df479f98e53aee7c9a4606000e4
+      assetLoadMode: 0
+      bundleSize: 65182
+      useCrcForCachedBundles: 0
+      useUWRForLocalBundles: 0
+      clearOtherCachedVersionsWhenLoaded: 0
