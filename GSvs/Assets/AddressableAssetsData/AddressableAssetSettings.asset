@@ -81,13 +81,17 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
-    - default
-    - ContentPack:GSvs.RoR2
     - ItemDef
-    - Light
+    - Projectile
+    - NetworkedObject
+    - BuffDef
+    - EquipmentDef
+    - SceneDef
+    - ContentPack:GSvs.RoR2
+    - ArtifactDef
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
-  - {fileID: 11400000, guid: 62d967486da928f46a2a805b956f88b1, type: 2}
+  - {fileID: 11400000, guid: 5df7d4e95fa4beb42afe952eb0d9cffc, type: 2}
   m_InitializationObjects: []
   m_CertificateHandlerType:
     m_AssemblyName: 

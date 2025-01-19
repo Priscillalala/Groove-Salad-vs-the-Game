@@ -128,6 +128,15 @@
       },
       "hash": "f755c49eaa02bdd409a3e1f63788008abea55567"
     },
+    "groovesalad.uesaddresser": {
+      "version": "file:C:/Users/sunde/Documents/GitHub/AssetsOfRainDev/Packages/UESAddresser",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "jp.co.cyberagent.smartaddresser": "1.0.9",
+        "com.unity.addressables": "1.18.15"
+      }
+    },
     "jp.co.cyberagent.smartaddresser": {
       "version": "https://github.com/CyberAgentGameEntertainment/SmartAddresser.git?path=/Assets/SmartAddresser#1.0.9",
       "depth": 0,

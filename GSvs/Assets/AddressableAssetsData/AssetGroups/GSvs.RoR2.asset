@@ -17,16 +17,41 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 74f16d4d5221eb94b94a0fb63b5ccc06
   m_SerializeEntries:
-  - m_GUID: 9c5282b5e93b08e4bb4ed80814a7a9cd
-    m_Address: GSvs/RoR2/inner/New Item Def.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - ContentPack:GSvs.RoR2
-    - ItemDef
   - m_GUID: 2be8a487f66fdde499b2a4dcf47ede80
     m_Address: GSvs/RoR2/inner/TestPrefab.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
+    - NetworkedObject
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 9c5282b5e93b08e4bb4ed80814a7a9cd
+    m_Address: GSvs/RoR2/inner/New Item Def.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDef
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 0187e2efb41a7924f9ca63e12606a4a1
+    m_Address: GSvs/RoR2/inner/New Buff Def.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDef
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 96e3653288bfe0244a1ea108f4428bd3
+    m_Address: GSvs/RoR2/inner/New Equipment Def.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EquipmentDef
+    - ContentPack:GSvs.RoR2
+  - m_GUID: c6c4e6746b19a894bb06d19d469291d2
+    m_Address: GSvs/RoR2/inner/New Buff Def Stock Threshold Icon.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDef
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 4d9039eb088fccb4293b749815c66d3c
+    m_Address: GSvs/RoR2/inner/New Scene Def.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneDef
     - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}

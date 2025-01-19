@@ -20,123 +20,555 @@ MonoBehaviour:
         _value: 
     _addressRules:
       _internalList:
-      - _id: a7fd67c0-92c7-4935-8f00-e4f44e855987
+      - _id: e26d77f8-ea8f-4f85-8083-18561e8798ef
         _addressableGroup: {fileID: 11400000, guid: 7a72705b781be764d925972692973bcc, type: 2}
         _control:
           _value: 0
         _assetGroups:
           _internalList:
-          - _id: 3230554f-c892-4525-a4f4-78298b1ae159
+          - _id: 7d157bd4-c708-485b-b54a-734e6ca83513
             _name:
               _value: Default Asset Group
             _filters:
               _internalList: []
         _addressProviderInternal:
-          rid: 1722732801224343552
-      - _id: 0555d160-8c54-4ef1-b53d-f41eb5ae30d0
+          rid: 1722732819318571008
+      - _id: b8be226e-d869-48af-9c24-9afaf12257b9
         _addressableGroup: {fileID: 11400000, guid: bf98907fce45f464cb364be3e5fe0f6e, type: 2}
         _control:
           _value: 1
         _assetGroups:
           _internalList:
-          - _id: 912baaa4-7897-431a-b822-33634e9e3cb1
+          - _id: 92bb251d-e517-4aa3-b9a5-d1d8cf53e1d8
             _name:
               _value: Default Asset Group
             _filters:
               _internalList:
-              - rid: 1722732801224343556
+              - rid: 1722732819318571010
         _addressProviderInternal:
-          rid: 1722732801224343553
+          rid: 1722732824466817198
     _labelRules:
       _internalList:
-      - _id: 77cdda08-baa4-497b-8a6e-fa5ae85a3a7f
+      - _id: c89b888b-407a-4eb9-b925-bfb71838dff4
         _name:
-          _value: GSvs.RoR2
+          _value: RoR2, SkillFamily Assets
         _assetGroups:
           _internalList:
-          - _id: 9099916a-f113-4406-aef7-ef7c4d9bc54b
+          - _id: 91ceb676-1ee4-46f4-9abf-b17e37aff654
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340727
+        _labelProviderInternal:
+          rid: 1722732839885340728
+      - _id: cda0e41d-7ac9-4c1b-a72e-10d95562f855
+        _name:
+          _value: RoR2, SkillDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: f21d2607-7567-4c5e-8111-a36c9e8c0dfe
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340729
+        _labelProviderInternal:
+          rid: 1722732839885340730
+      - _id: 3fd9f2a1-0480-47da-8d40-9f87cf113cb0
+        _name:
+          _value: RoR2, UnlockableDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 427845ea-044c-428c-8a02-0412920567d5
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340731
+        _labelProviderInternal:
+          rid: 1722732839885340732
+      - _id: 4c0eb8fb-7bb0-4811-b515-8cb755456a64
+        _name:
+          _value: RoR2, SurfaceDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 13ed1621-edb8-464a-b98f-8251d31bea53
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340733
+        _labelProviderInternal:
+          rid: 1722732839885340734
+      - _id: 05c0a49a-aa92-4197-8133-6271ebad62e9
+        _name:
+          _value: RoR2, SceneDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 477fc2fc-e93b-4b82-b00b-8d1874052dcc
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340735
+        _labelProviderInternal:
+          rid: 1722732839885340736
+      - _id: 380c3a03-4188-49bc-8e62-9c0bf5f44f9d
+        _name:
+          _value: RoR2, NetworkSoundEventDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 6ba930f0-f758-48d4-bd5b-5ad98a088bf4
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340737
+        _labelProviderInternal:
+          rid: 1722732839885340738
+      - _id: 43115b3c-b6ad-4281-8a94-5f978992e26b
+        _name:
+          _value: RoR2, MusicTrackDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 4abff045-9338-4d52-b9d6-1a6276e4d6bd
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340739
+        _labelProviderInternal:
+          rid: 1722732839885340740
+      - _id: b013e8d6-5c90-4b8a-846c-a04625a20fea
+        _name:
+          _value: RoR2, GameEndingDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: eb203013-b20b-4b43-9ad7-bfc7eb2e9300
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340741
+        _labelProviderInternal:
+          rid: 1722732839885340742
+      - _id: 97eb8a1f-38aa-418e-beff-96b578ea77db
+        _name:
+          _value: RoR2, ItemDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 3122ba2a-0a36-4642-af43-6a0aad87ae4c
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340743
+        _labelProviderInternal:
+          rid: 1722732839885340744
+      - _id: 80e882c1-c83a-47f6-9257-99be2daaadef
+        _name:
+          _value: RoR2, ItemTierDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 1c2001ef-88c2-4a0d-86fd-7dbbe85d4104
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340745
+        _labelProviderInternal:
+          rid: 1722732839885340746
+      - _id: 1a471491-5ff4-4fb1-b168-2f2486f37947
+        _name:
+          _value: RoR2, EquipmentDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: fc76ca4b-c20e-49bd-80b8-0e29aea50f7f
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340747
+        _labelProviderInternal:
+          rid: 1722732839885340748
+      - _id: 76f849e2-23a6-4281-9d59-ce5170892ea1
+        _name:
+          _value: RoR2, BuffDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 255a4370-9652-43e4-94d2-ad2196449938
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340749
+        _labelProviderInternal:
+          rid: 1722732839885340750
+      - _id: ef00b3f5-8595-4764-a497-22f404560d32
+        _name:
+          _value: RoR2, EliteDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 0a1153a3-8aca-4fbd-b6ef-bfc51f1daa73
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340751
+        _labelProviderInternal:
+          rid: 1722732839885340752
+      - _id: 36a06fcd-198a-4b26-b59a-31b5852c777b
+        _name:
+          _value: RoR2, SurvivorDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 80adaa15-7ce0-4a58-9685-e2d8596ddfe4
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340753
+        _labelProviderInternal:
+          rid: 1722732839885340754
+      - _id: ebc3022f-2584-4592-be91-d0fe9ea5705a
+        _name:
+          _value: RoR2, ArtifactDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 17c50c68-d647-428f-9964-7a3c19762078
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340755
+        _labelProviderInternal:
+          rid: 1722732839885340756
+      - _id: cfe800d5-eed5-40cd-962b-a572dbc09a8c
+        _name:
+          _value: RoR2, EntityStateConfiguration Assets
+        _assetGroups:
+          _internalList:
+          - _id: 3c903393-fcd8-4c1b-9bf8-b60bb34689dd
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340757
+        _labelProviderInternal:
+          rid: 1722732839885340758
+      - _id: d69e18e1-a264-44af-bf0d-fcd9053c1edb
+        _name:
+          _value: RoR2, ExpansionDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 9f08ce68-a3fb-4a2c-b997-a46fab977c99
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340759
+        _labelProviderInternal:
+          rid: 1722732839885340760
+      - _id: 001f853f-62ea-4f2a-a102-5ce5e7db6dd6
+        _name:
+          _value: RoR2, EntitlementDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 28ef91e9-4752-45bc-9573-1209fa571945
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340761
+        _labelProviderInternal:
+          rid: 1722732839885340762
+      - _id: 0fac879c-d0df-4c1f-9c77-e0f01a32efed
+        _name:
+          _value: RoR2, ItemRelationshipProvider Assets
+        _assetGroups:
+          _internalList:
+          - _id: dafadc88-8534-4db1-9000-50e62b88f4b7
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340763
+        _labelProviderInternal:
+          rid: 1722732839885340764
+      - _id: bfb1d10e-946e-4c95-9c2b-841ae40fe138
+        _name:
+          _value: RoR2, ItemRelationshipType Assets
+        _assetGroups:
+          _internalList:
+          - _id: 945dedff-7e99-4708-9db1-8e5662ad5029
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340765
+        _labelProviderInternal:
+          rid: 1722732839885340766
+      - _id: d1c17970-4b7b-4550-b0aa-7c6d6b2e4de3
+        _name:
+          _value: RoR2, MiscPickupDef Assets
+        _assetGroups:
+          _internalList:
+          - _id: 595bc7fd-407e-4ff1-8a34-0ffe0c91bc5d
+            _name:
+              _value: Asset Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340767
+        _labelProviderInternal:
+          rid: 1722732839885340768
+      - _id: 1cd8a629-33ce-4270-a95d-4a81fdba1dde
+        _name:
+          _value: RoR2, CharacterBody Prefabs
+        _assetGroups:
+          _internalList:
+          - _id: 901cf094-dd3d-4b80-a0b1-1e7155e479d2
+            _name:
+              _value: Component Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340769
+        _labelProviderInternal:
+          rid: 1722732839885340770
+      - _id: 97dfa339-34ca-414e-8fe6-edec3d4dafa9
+        _name:
+          _value: RoR2, CharacterMaster Prefabs
+        _assetGroups:
+          _internalList:
+          - _id: ffeebc09-a9c7-4598-bf41-23a9104fe3bf
+            _name:
+              _value: Component Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340771
+        _labelProviderInternal:
+          rid: 1722732839885340772
+      - _id: 1e696928-bbf2-4fbb-aed7-5d2d1d899036
+        _name:
+          _value: RoR2, Projectile Prefabs
+        _assetGroups:
+          _internalList:
+          - _id: 7cc506bc-5b8e-40f5-a06f-a6947ad669a4
+            _name:
+              _value: Component Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340773
+        _labelProviderInternal:
+          rid: 1722732839885340774
+      - _id: eb959b6f-dbdd-47df-99bb-461a37138c03
+        _name:
+          _value: RoR2, GameMode Prefabs
+        _assetGroups:
+          _internalList:
+          - _id: 8d0793be-e253-4af9-8b1c-a40c6cf94f0c
+            _name:
+              _value: Component Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340775
+        _labelProviderInternal:
+          rid: 1722732839885340776
+      - _id: 94463fe7-8186-482f-99f5-0c94f3f5257b
+        _name:
+          _value: RoR2, NetworkedObject Prefabs
+        _assetGroups:
+          _internalList:
+          - _id: 72b122c2-8f28-4904-984b-84eab81aa94d
+            _name:
+              _value: Component Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340777
+        _labelProviderInternal:
+          rid: 1722732839885340778
+      - _id: 52b7895b-68b0-451f-ad1f-f1baa5204ca0
+        _name:
+          _value: RoR2, Effect Prefabs
+        _assetGroups:
+          _internalList:
+          - _id: 4d11f136-c771-4004-822c-ee588c93d0a6
+            _name:
+              _value: Component Type Group
+            _filters:
+              _internalList:
+              - rid: 1722732839885340779
+        _labelProviderInternal:
+          rid: 1722732839885340780
+      - _id: db475ae9-2ccc-4bd7-9b0b-cf0637ee5d03
+        _name:
+          _value: New Label Rule
+        _assetGroups:
+          _internalList:
+          - _id: 3af217b8-7632-4352-922e-deaf0f1bc060
             _name:
               _value: Default Asset Group
             _filters:
               _internalList:
-              - rid: 1722732801224343558
+              - rid: 1722732839885340782
         _labelProviderInternal:
-          rid: 1722732801224343557
-      - _id: b2802046-bf9a-4222-9783-fd3d2fb4774b
-        _name:
-          _value: ItemDef
-        _assetGroups:
-          _internalList:
-          - _id: 97e83702-218f-4db7-96e6-33d1dc7cb44d
-            _name:
-              _value: Default Asset Group
-            _filters:
-              _internalList:
-              - rid: 1722732801224343560
-        _labelProviderInternal:
-          rid: 1722732801224343559
-      - _id: 73e4a1ef-cb8c-4ab4-87b0-e8d251318b0a
-        _name:
-          _value: Light
-        _assetGroups:
-          _internalList:
-          - _id: 3cad2bac-40a6-41ef-ae82-ea4d775b3bf7
-            _name:
-              _value: Default Asset Group
-            _filters:
-              _internalList:
-              - rid: 1722732802837839872
-        _labelProviderInternal:
-          rid: 1722732801224343561
+          rid: 1722732839885340783
     _versionRules:
       _internalList: []
   references:
     version: 2
     RefIds:
-    - rid: 1722732801224343552
+    - rid: 1722732819318571008
       type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules, asm: SmartAddresser.Editor}
       data:
         _source: 2
         _replaceWithRegex: 0
         _pattern: 
         _replacement: 
-    - rid: 1722732801224343553
-      type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules, asm: SmartAddresser.Editor}
-      data:
-        _source: 2
-        _replaceWithRegex: 1
-        _pattern: ^Assets\/
-        _replacement: 
-    - rid: 1722732801224343556
+    - rid: 1722732819318571010
       type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
       data:
-        _id: 9a7f0865-c80c-4663-8deb-820902fd1a7c
+        _id: 4a94f953-6068-43f2-9dbd-32fe89ecff37
         _folderTargetingMode: 0
         _object:
           _isListMode: 0
           _values:
           - {fileID: 102900000, guid: 411b8e8abd70f5e40978474af53aa47e, type: 3}
-    - rid: 1722732801224343557
-      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules, asm: SmartAddresser.Editor}
-      data:
-        _label: ContentPack:GSvs.RoR2
-    - rid: 1722732801224343558
-      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
-      data:
-        _id: 6694a700-9d21-48db-b71b-88ce4a985205
-        _folderTargetingMode: 0
-        _object:
-          _isListMode: 0
-          _values:
-          - {fileID: 102900000, guid: 411b8e8abd70f5e40978474af53aa47e, type: 3}
-    - rid: 1722732801224343559
-      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules, asm: SmartAddresser.Editor}
-      data:
-        _label: ItemDef
-    - rid: 1722732801224343560
+    - rid: 1722732824466817198
+      type: {class: RoR2StyleAddressProvider, ns: UESAddresser.Editor.AddressProviders, asm: UESAddresser.Editor}
+      data: 
+    - rid: 1722732839885340727
       type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
       data:
-        _id: ee9c3d77-f835-413b-a1e6-7d17ac951c5c
+        _id: 5850aa9a-ffdf-4b33-a45a-80981d89a96c
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: SkillFamily
+            _fullName: RoR2.Skills.SkillFamily
+            _assemblyQualifiedName: RoR2.Skills.SkillFamily, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340728
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: SkillFamily
+    - rid: 1722732839885340729
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 226218a0-e086-4b19-a7d3-f2bc2c507528
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: SkillDef
+            _fullName: RoR2.Skills.SkillDef
+            _assemblyQualifiedName: RoR2.Skills.SkillDef, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340730
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: SkillDef
+    - rid: 1722732839885340731
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: cb1d831a-5070-4ce9-a69c-dfce89b5552c
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: UnlockableDef
+            _fullName: RoR2.UnlockableDef
+            _assemblyQualifiedName: RoR2.UnlockableDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340732
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: UnlockableDef
+    - rid: 1722732839885340733
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: da8cf32e-8f9f-4b87-9405-5ccbd734c702
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: SurfaceDef
+            _fullName: RoR2.SurfaceDef
+            _assemblyQualifiedName: RoR2.SurfaceDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340734
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: SurfaceDef
+    - rid: 1722732839885340735
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 997b60db-3e0e-4c7e-b377-516f30241c5e
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: SceneDef
+            _fullName: RoR2.SceneDef
+            _assemblyQualifiedName: RoR2.SceneDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340736
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: SceneDef
+    - rid: 1722732839885340737
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: fd5b62b0-d7ba-4367-8f33-b5a614ae65fb
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: NetworkSoundEventDef
+            _fullName: RoR2.NetworkSoundEventDef
+            _assemblyQualifiedName: RoR2.NetworkSoundEventDef, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340738
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: NetworkSoundEventDef
+    - rid: 1722732839885340739
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 6d406d14-d892-4849-a88a-5502df247266
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: MusicTrackDef
+            _fullName: RoR2.MusicTrackDef
+            _assemblyQualifiedName: RoR2.MusicTrackDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340740
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: MusicTrackDef
+    - rid: 1722732839885340741
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 353acd43-2321-4057-8ee2-0a71dddb60d3
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: GameEndingDef
+            _fullName: RoR2.GameEndingDef
+            _assemblyQualifiedName: RoR2.GameEndingDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340742
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: GameEndingDef
+    - rid: 1722732839885340743
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: c453d4a9-bb2e-4585-bf39-bc38a23ea654
         _type:
           _isListMode: 0
           _values:
@@ -145,14 +577,240 @@ MonoBehaviour:
             _assemblyQualifiedName: RoR2.ItemDef, RoR2, Version=0.0.0.0, Culture=neutral,
               PublicKeyToken=null
         _matchWithDerivedTypes: 1
-    - rid: 1722732801224343561
-      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules, asm: SmartAddresser.Editor}
+    - rid: 1722732839885340744
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
       data:
-        _label: Light
-    - rid: 1722732802837839872
-      type: {class: ComponentBasedAssetFilter, ns: GSvs.Editor, asm: GSvs.Editor}
+        _label: ItemDef
+    - rid: 1722732839885340745
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
       data:
-        _id: 9002651d-3d28-4c96-83e0-bc86df2d187e
+        _id: 9dc9eef2-46f4-43e9-a092-268b62c3cebb
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: ItemTierDef
+            _fullName: RoR2.ItemTierDef
+            _assemblyQualifiedName: RoR2.ItemTierDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340746
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: ItemTierDef
+    - rid: 1722732839885340747
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: bfde9692-d8ff-46cd-b1e9-70c06fdb0c8f
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: EquipmentDef
+            _fullName: RoR2.EquipmentDef
+            _assemblyQualifiedName: RoR2.EquipmentDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340748
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: EquipmentDef
+    - rid: 1722732839885340749
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: b2cf7fad-19b1-4116-a47b-7c2146ddcbfc
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: BuffDef
+            _fullName: RoR2.BuffDef
+            _assemblyQualifiedName: RoR2.BuffDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340750
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: BuffDef
+    - rid: 1722732839885340751
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: c2447045-a1b3-4db0-9f89-ce8ff0ebfed6
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: EliteDef
+            _fullName: RoR2.EliteDef
+            _assemblyQualifiedName: RoR2.EliteDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340752
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: EliteDef
+    - rid: 1722732839885340753
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: f3c9449c-edcf-43b1-88c4-572459b614bc
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: SurvivorDef
+            _fullName: RoR2.SurvivorDef
+            _assemblyQualifiedName: RoR2.SurvivorDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340754
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: SurvivorDef
+    - rid: 1722732839885340755
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 74c31646-596c-46c6-b324-8d570a8695e7
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: ArtifactDef
+            _fullName: RoR2.ArtifactDef
+            _assemblyQualifiedName: RoR2.ArtifactDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340756
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: ArtifactDef
+    - rid: 1722732839885340757
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: de1e987c-ae34-4fb9-b8d7-6dc104dbf89f
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: EntityStateConfiguration
+            _fullName: RoR2.EntityStateConfiguration
+            _assemblyQualifiedName: RoR2.EntityStateConfiguration, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340758
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: EntityStateConfiguration
+    - rid: 1722732839885340759
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: f1c1d8ed-746f-4408-a846-9833a4c0f94c
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: ExpansionDef
+            _fullName: RoR2.ExpansionManagement.ExpansionDef
+            _assemblyQualifiedName: RoR2.ExpansionManagement.ExpansionDef, RoR2,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340760
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: ExpansionDef
+    - rid: 1722732839885340761
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 1480554b-0235-442f-b2d4-06f6ac07500c
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: EntitlementDef
+            _fullName: RoR2.EntitlementManagement.EntitlementDef
+            _assemblyQualifiedName: RoR2.EntitlementManagement.EntitlementDef, RoR2,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340762
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: EntitlementDef
+    - rid: 1722732839885340763
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: f7ae5b68-7fb3-4859-b14f-c664ad80515b
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: ItemRelationshipProvider
+            _fullName: RoR2.ItemRelationshipProvider
+            _assemblyQualifiedName: RoR2.ItemRelationshipProvider, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340764
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: ItemRelationshipProvider
+    - rid: 1722732839885340765
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 073e8aef-b4e2-4054-b205-3b9368c83db1
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: ItemRelationshipType
+            _fullName: RoR2.ItemRelationshipType
+            _assemblyQualifiedName: RoR2.ItemRelationshipType, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340766
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: ItemRelationshipType
+    - rid: 1722732839885340767
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: c358e47c-7986-40c9-88ff-2264f03e743f
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: MiscPickupDef
+            _fullName: RoR2.MiscPickupDef
+            _assemblyQualifiedName: RoR2.MiscPickupDef, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        _matchWithDerivedTypes: 1
+    - rid: 1722732839885340768
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: MiscPickupDef
+    - rid: 1722732839885340769
+      type: {class: ComponentBasedAssetFilter, ns: UESAddresser.Editor.AssetFilters, asm: UESAddresser.Editor}
+      data:
+        _id: a7e53fe5-9771-450a-93ae-582c10822b86
+        componentType:
+          _isListMode: 0
+          _values:
+          - _name: CharacterBody
+            _fullName: RoR2.CharacterBody
+            _assemblyQualifiedName: RoR2.CharacterBody, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        matchWithDerivedComponentTypes: 1
+        searchChildren: 0
+    - rid: 1722732839885340770
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: CharacterBody
+    - rid: 1722732839885340771
+      type: {class: ComponentBasedAssetFilter, ns: UESAddresser.Editor.AssetFilters, asm: UESAddresser.Editor}
+      data:
+        _id: a602cdc0-fd78-4b14-8978-4c446e8e26fc
+        componentType:
+          _isListMode: 0
+          _values:
+          - _name: CharacterMaster
+            _fullName: RoR2.CharacterMaster
+            _assemblyQualifiedName: RoR2.CharacterMaster, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        matchWithDerivedComponentTypes: 1
+        searchChildren: 0
+    - rid: 1722732839885340772
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: CharacterMaster
+    - rid: 1722732839885340773
+      type: {class: ComponentBasedAssetFilter, ns: UESAddresser.Editor.AssetFilters, asm: UESAddresser.Editor}
+      data:
+        _id: 32ca2988-9a47-40e5-ad86-f10d1bf598ef
         componentType:
           _isListMode: 0
           _values:
@@ -162,3 +820,71 @@ MonoBehaviour:
               Culture=neutral, PublicKeyToken=null
         matchWithDerivedComponentTypes: 1
         searchChildren: 0
+    - rid: 1722732839885340774
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: Projectile
+    - rid: 1722732839885340775
+      type: {class: ComponentBasedAssetFilter, ns: UESAddresser.Editor.AssetFilters, asm: UESAddresser.Editor}
+      data:
+        _id: eebe57af-a330-4238-84a6-bc50516ae71e
+        componentType:
+          _isListMode: 0
+          _values:
+          - _name: Run
+            _fullName: RoR2.Run
+            _assemblyQualifiedName: RoR2.Run, RoR2, Version=0.0.0.0, Culture=neutral,
+              PublicKeyToken=null
+        matchWithDerivedComponentTypes: 1
+        searchChildren: 0
+    - rid: 1722732839885340776
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: GameMode
+    - rid: 1722732839885340777
+      type: {class: ComponentBasedAssetFilter, ns: UESAddresser.Editor.AssetFilters, asm: UESAddresser.Editor}
+      data:
+        _id: 9b88eefd-3701-4738-a07c-5553a74e313c
+        componentType:
+          _isListMode: 0
+          _values:
+          - _name: NetworkIdentity
+            _fullName: UnityEngine.Networking.NetworkIdentity
+            _assemblyQualifiedName: UnityEngine.Networking.NetworkIdentity, com.unity.multiplayer-hlapi.Runtime,
+              Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        matchWithDerivedComponentTypes: 1
+        searchChildren: 0
+    - rid: 1722732839885340778
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: NetworkedObject
+    - rid: 1722732839885340779
+      type: {class: ComponentBasedAssetFilter, ns: UESAddresser.Editor.AssetFilters, asm: UESAddresser.Editor}
+      data:
+        _id: 01647d5b-ab0f-4c3b-bd7b-5beeaf1192e1
+        componentType:
+          _isListMode: 0
+          _values:
+          - _name: EffectComponent
+            _fullName: RoR2.EffectComponent
+            _assemblyQualifiedName: RoR2.EffectComponent, RoR2, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        matchWithDerivedComponentTypes: 1
+        searchChildren: 0
+    - rid: 1722732839885340780
+      type: {class: RoR2LabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _label: Effect
+    - rid: 1722732839885340782
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl, asm: SmartAddresser.Editor}
+      data:
+        _id: 04e22e36-b2e5-4547-8e00-239793c69866
+        _folderTargetingMode: 0
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 102900000, guid: 411b8e8abd70f5e40978474af53aa47e, type: 3}
+    - rid: 1722732839885340783
+      type: {class: ContentPackLabelProvider, ns: UESAddresser.Editor.LabelProviders, asm: UESAddresser.Editor}
+      data:
+        _identifier: GSvs.RoR2
