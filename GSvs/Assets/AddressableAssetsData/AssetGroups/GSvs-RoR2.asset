@@ -20,7 +20,9 @@ MonoBehaviour:
   - m_GUID: e42b89f02daacc847ad1e639b71ee174
     m_Address: GSvs/RoR2/Items/SaleStar/SaleStarChestAttachment.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - NetworkedObject
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:

@@ -240,5 +240,8 @@ MonoBehaviour:
     - primaryKey: RoR2/DLC2/Items/LowerPricedChests/matSaleStar.mat
       assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/wispgraveyard/matWPDirtBlender.mat
+      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   ignoredShaderDirectories:
   - Hopoo Games/Optimized/Switch/
