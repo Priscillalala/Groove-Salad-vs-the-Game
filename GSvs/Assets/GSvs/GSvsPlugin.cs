@@ -7,6 +7,8 @@ using UnityEngine.AddressableAssets;
 using RoR2.ExpansionManagement;
 using RoR2.ContentManagement;
 using GSvs.RoR2;
+using HG.Reflection;
+using System;
 
 [module: UnverifiableCode]
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -38,6 +40,11 @@ namespace GSvs
             foreach (var key in locator.Keys)
             {
                 Logger.LogMessage(key);
+            }
+
+            foreach (var attribute in SearchableAttribute.GetInstances<ContentModificationAttribute>())
+            {
+                ((IContentModification)Activator.CreateInstance((Type)attribute.target)).Initialize();
             }
 
             ContentManager.collectContentPackProviders += add => add(new GSvsRoR2Content());
