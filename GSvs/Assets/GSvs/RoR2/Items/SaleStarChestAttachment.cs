@@ -54,6 +54,10 @@ namespace GSvs.RoR2.Items
             {
                 rouletteChestServer.onCycleCompletedServer.RemoveListener(OnChestOpenedServer);
             }
+        }
+
+        public void OnDisable()
+        {
             if (balloons)
             {
                 balloons.transform.SetParent(null);
@@ -62,23 +66,15 @@ namespace GSvs.RoR2.Items
                 for (int i = 0; i < balloons.particleCount; i++)
                 {
                     ref ParticleSystem.Particle particle = ref balloonParticles[i];
-                    //particle.remainingLifetime = 10f;
-                    particle.position = particle.position;
-                    particle.velocity = particle.velocity;
+                    particle.remainingLifetime = 10f;
+                    //particle.position = particle.position;
+                    //particle.velocity = particle.velocity;
                 }
                 //var force = balloons.forceOverLifetime;
                 //force.enabled = true;
                 balloons.SetParticles(balloonParticles);
             }
         }
-
-        /*public void OnDisable()
-        {
-            if (balloons)
-            {
-                balloons.transform.SetParent(null);
-            }
-        }*/
 
         public void OnChestOpenedServer()
         {

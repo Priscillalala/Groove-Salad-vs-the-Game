@@ -75,7 +75,6 @@ namespace GSvs.RoR2.Items
                     continue;
                 }
                 
-                Object.Instantiate(Addressables.LoadAssetAsync<GameObject>("RoR2/DLC2/Items/LowerPricedChests/LowerPricedChestsGlow.prefab").WaitForCompletion(), purchaseInteraction.transform.position, Quaternion.identity, purchaseInteraction.transform);
                 var attachment = Object.Instantiate(Addressables.LoadAssetAsync<GameObject>("GSvs/RoR2/Items/SaleStar/SaleStarChestAttachment.prefab").WaitForCompletion(), purchaseInteraction.transform.position, Quaternion.identity, purchaseInteraction.transform);
                 attachment.GetComponent<SaleStarChestAttachment>().SetPurchaseInteractionServer(purchaseInteraction);
                 NetworkServer.Spawn(attachment);

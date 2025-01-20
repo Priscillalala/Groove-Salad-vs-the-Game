@@ -34,6 +34,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - ContentPack:GSvs.RoR2
+  - m_GUID: ecbd1f2eb1f49d44e9d01f24bfb2bbd3
+    m_Address: GSvs/RoR2/Items/SaleStar/matPartyDecal.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 66f9a28898e2ec74cb235bd002e4d531
+    m_Address: GSvs/RoR2/Items/SaleStar/texStreamers.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:
