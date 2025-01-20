@@ -1,4 +1,3 @@
-using EntityStates;
 using RoR2;
 using UnityEngine;
 
@@ -34,6 +33,29 @@ namespace GSvs.RoR2.Items
 
         public void OnChestOpenedServer()
         {
+            if (DelusionChestController.isDelusionEnable && chestServer && chestServer.TryGetComponent(out DelusionChestController delusionChestController))
+            {
+                if (delusionChestController.isDelusionSelected)
+                {
+                    if (!delusionChestController.IsSelectedCorrectly())
+                    {
+                        Destroy(gameObject);
+                        return;
+                    }
+                }
+                else
+                {
+                    PlayOpeningEffectServer();
+                    return;
+                }
+            }
+
+            PlayOpeningEffectServer();
+            Destroy(gameObject);
+        }
+
+        public void PlayOpeningEffectServer()
+        {
             Vector3 origin = transform.position;
             if (chestServer && chestServer.dropTransform)
             {
@@ -48,8 +70,6 @@ namespace GSvs.RoR2.Items
                 origin = origin,
                 rotation = transform.rotation,
             }, true);
-
-            Destroy(gameObject);
         }
 
         public void Start()
