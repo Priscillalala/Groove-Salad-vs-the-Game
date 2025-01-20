@@ -258,9 +258,6 @@ MonoBehaviour:
     - primaryKey: Decalicious/DecalCube.asset
       assemblyQualifiedTypeName: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-    - primaryKey: RoR2/Base/goolake/matGoolakeTerrain.mat
-      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
     - primaryKey: RoR2/Base/Common/VFX/ParticleMasks/texSplat1Mask.png
       assemblyQualifiedTypeName: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
