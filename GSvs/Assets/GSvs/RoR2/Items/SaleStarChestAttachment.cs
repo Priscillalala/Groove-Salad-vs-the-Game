@@ -82,38 +82,13 @@ namespace GSvs.RoR2.Items
             {
                 balloons.transform.SetParent(null);
 
-                /*var force = balloons.forceOverLifetime;
-                force.enabled = true;
-                var limitVelocityOverLifeTime = balloons.limitVelocityOverLifetime;
-                limitVelocityOverLifeTime.enabled = true;*/
                 var collision = balloons.collision;
                 collision.enabled = true;
-
-                /*ParticleSystem.Particle[] balloonParticles = new ParticleSystem.Particle[balloons.particleCount];
-                balloons.GetParticles(balloonParticles);
-                for (int i = 0; i < balloons.particleCount; i++)
-                {
-                    ref ParticleSystem.Particle particle = ref balloonParticles[i];
-                    particle.remainingLifetime = 30f;
-                    Vector3 velocity = (particle.position - transform.position).normalized * 5f;
-                    velocity.y *= 0.5f;
-                    particle.velocity = velocity;
-                }
-                balloons.SetParticles(balloonParticles);*/
-
-                if (balloons.TryGetComponent(out Rigidbody rigidbody))
-                {
-                    rigidbody.AddForce(Vector3.up, ForceMode.Impulse);
-                }
 
                 if (balloons.TryGetComponent(out ConstantForce constantForce))
                 {
                     constantForce.enabled = true;
                 }
-                /*if (balloons.TryGetComponent(out DestroyOnParticleEnd destroyOnParticleEnd))
-                {
-                    destroyOnParticleEnd.enabled = true;
-                }*/
                 if (balloons.TryGetComponent(out DestroyOnTimer destroyOnTimer))
                 {
                     destroyOnTimer.enabled = true;
@@ -121,6 +96,11 @@ namespace GSvs.RoR2.Items
                 if (balloons.TryGetComponent(out Collider collider))
                 {
                     collider.enabled = true;
+                }
+
+                if (balloons.TryGetComponent(out Rigidbody rigidbody))
+                {
+                    rigidbody.AddForce(Vector3.up, ForceMode.Impulse);
                 }
             }
         }
