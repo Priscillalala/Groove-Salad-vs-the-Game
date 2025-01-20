@@ -79,7 +79,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaBoost: 13
+    - _AlphaBoost: 4
     - _AngleLimit: 0.5
     - _BumpScale: 1
     - _CloudOn: 1

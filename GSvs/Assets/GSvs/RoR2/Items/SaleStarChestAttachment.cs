@@ -61,6 +61,8 @@ namespace GSvs.RoR2.Items
             if (balloons)
             {
                 balloons.transform.SetParent(null);
+                var force = balloons.forceOverLifetime;
+                force.enabled = true;
                 ParticleSystem.Particle[] balloonParticles = new ParticleSystem.Particle[balloons.particleCount];
                 balloons.GetParticles(balloonParticles);
                 for (int i = 0; i < balloons.particleCount; i++)
@@ -70,8 +72,6 @@ namespace GSvs.RoR2.Items
                     //particle.position = particle.position;
                     //particle.velocity = particle.velocity;
                 }
-                //var force = balloons.forceOverLifetime;
-                //force.enabled = true;
                 balloons.SetParticles(balloonParticles);
             }
         }
