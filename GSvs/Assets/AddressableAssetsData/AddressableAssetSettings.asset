@@ -89,6 +89,7 @@ MonoBehaviour:
     - SceneDef
     - ContentPack:GSvs.RoR2
     - ArtifactDef
+    - Effect
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 5df7d4e95fa4beb42afe952eb0d9cffc, type: 2}

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0d3853ebc6fc2c1488d49dbda436ef54
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: RoR2/Base/Common/VFX/mdlVFXLightShaft.fbx
+    assemblyQualifiedTypeName: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results: []
+  bundleDependencies: []

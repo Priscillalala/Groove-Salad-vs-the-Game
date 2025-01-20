@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 27215f49b9d2e9a429e3942b6a38a837
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: RoR2/DLC2/Items/LowerPricedChests/matLowerPricedChestsGlow1.mat
+    assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results: []
+  bundleDependencies: []

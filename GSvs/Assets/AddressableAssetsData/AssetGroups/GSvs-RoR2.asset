@@ -23,6 +23,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - NetworkedObject
     - ContentPack:GSvs.RoR2
+  - m_GUID: 7e6f317b9c7b2304e9f58f9e9a3f6a56
+    m_Address: GSvs/RoR2/Items/SaleStar/SaleStarOpeningEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Effect
+    - ContentPack:GSvs.RoR2
+  - m_GUID: abc18b5ef5ce6384f9b8f9e20b7e808d
+    m_Address: GSvs/RoR2/Items/SaleStar/matBalloonString.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:

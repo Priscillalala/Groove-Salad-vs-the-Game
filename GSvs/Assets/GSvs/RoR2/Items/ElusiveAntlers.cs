@@ -17,7 +17,7 @@ namespace GSvs.RoR2.Items
                 {
                     destroyOnTimer = ElusiveAntlersPickup.AddComponent<DestroyOnTimer>();
                 }
-                destroyOnTimer.duration = 120f;
+                destroyOnTimer.duration = 90f;
                 Transform AntlerShieldBuffPickupVFX = ElusiveAntlersPickup.transform.Find("AntlerShieldBuffPickupVFX");
                 if (AntlerShieldBuffPickupVFX)
                 {
@@ -26,8 +26,8 @@ namespace GSvs.RoR2.Items
                         beginRapidlyActivatingAndDeactivating = ElusiveAntlersPickup.AddComponent<BeginRapidlyActivatingAndDeactivating>();
                     }
                     beginRapidlyActivatingAndDeactivating.enabled = true;
-                    beginRapidlyActivatingAndDeactivating.blinkFrequency = 4f;
-                    beginRapidlyActivatingAndDeactivating.delayBeforeBeginningBlinking = 118f;
+                    beginRapidlyActivatingAndDeactivating.blinkFrequency = 6f;
+                    beginRapidlyActivatingAndDeactivating.delayBeforeBeginningBlinking = 89f;
                     beginRapidlyActivatingAndDeactivating.blinkingRootObject = AntlerShieldBuffPickupVFX.gameObject;
                 }
             };

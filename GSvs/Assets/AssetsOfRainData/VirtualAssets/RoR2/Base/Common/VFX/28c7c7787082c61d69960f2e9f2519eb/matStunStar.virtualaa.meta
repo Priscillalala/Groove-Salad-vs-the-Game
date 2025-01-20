@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5ea62d2c0ba0832419f3d5958269e70a
+guid: 84ca63637a92e2241a99ca67d4dbea45
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,7 +9,7 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
   request:
-    primaryKey: RoR2/Base/wispgraveyard/matWPDirtBlender.mat
+    primaryKey: RoR2/Base/Common/VFX/matStunStar.mat
     assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   results: []

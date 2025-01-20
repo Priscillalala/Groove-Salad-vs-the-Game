@@ -240,7 +240,19 @@ MonoBehaviour:
     - primaryKey: RoR2/DLC2/Items/LowerPricedChests/matSaleStar.mat
       assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-    - primaryKey: RoR2/Base/wispgraveyard/matWPDirtBlender.mat
+    - primaryKey: RoR2/Base/Common/VFX/matStunStar.mat
+      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Common/VFX/matGenericFlash.mat
+      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/ClayBoss/matClayBossLightshaft.mat
+      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Common/VFX/mdlVFXLightShaft.fbx
+      assemblyQualifiedTypeName: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/DLC2/Items/LowerPricedChests/matLowerPricedChestsGlow1.mat
       assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   ignoredShaderDirectories:
