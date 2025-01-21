@@ -16,7 +16,8 @@
         "BepInEx.dll",
         "HGCSharpUtils.dll",
         "Mono.Cecil.dll",
-        "MonoMod.Utils.dll"
+        "MonoMod.Utils.dll",
+        "0Harmony.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

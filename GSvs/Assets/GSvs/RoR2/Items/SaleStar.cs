@@ -7,19 +7,22 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
+using HarmonyLib;
 
 namespace GSvs.RoR2.Items
 {
     [ContentModification]
+    [HarmonyPatch]
     public class SaleStar : IContentModification
     {
         public void Initialize()
         {
             SceneDirector.onPostPopulateSceneServer += SceneDirector_onPostPopulateSceneServer;
-            IL.RoR2.InteractionDriver.MyFixedUpdate += IgnoreSaleStar;
-            IL.RoR2.PurchaseInteraction.OnInteractionBegin += IgnoreSaleStar;
         }
 
+        [HarmonyILManipulator]
+        [HarmonyPatch(typeof(InteractionDriver), nameof(InteractionDriver.MyFixedUpdate))]
+        [HarmonyPatch(typeof(PurchaseInteraction), nameof(PurchaseInteraction.OnInteractionBegin))]
         private static void IgnoreSaleStar(ILContext il)
         {
             ILCursor c = new ILCursor(il);

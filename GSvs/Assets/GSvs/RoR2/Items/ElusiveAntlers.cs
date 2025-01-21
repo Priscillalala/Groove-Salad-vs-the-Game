@@ -10,27 +10,31 @@ namespace GSvs.RoR2.Items
         public void Initialize()
         {
             Debug.Log("ElusiveAntlers init");
-            Addressables.LoadAssetAsync<GameObject>("RoR2/DLC2/Items/SpeedBoostPickup/ElusiveAntlersPickup.prefab").Completed += op =>
+        }
+
+        [AssetManipulator]
+        private static void SetAntlersPickupDuration(
+            [LoadAsset("RoR2/DLC2/Items/SpeedBoostPickup/ElusiveAntlersPickup.prefab")] GameObject ElusiveAntlersPickup
+            )
+        {
+            Debug.Log($"SetAntlersPickupDuration:");
+            if (!ElusiveAntlersPickup.TryGetComponent(out DestroyOnTimer destroyOnTimer))
             {
-                GameObject ElusiveAntlersPickup = op.Result;
-                if (!ElusiveAntlersPickup.TryGetComponent(out DestroyOnTimer destroyOnTimer))
+                destroyOnTimer = ElusiveAntlersPickup.AddComponent<DestroyOnTimer>();
+            }
+            destroyOnTimer.duration = 90f;
+            Transform AntlerShieldBuffPickupVFX = ElusiveAntlersPickup.transform.Find("AntlerShieldBuffPickupVFX");
+            if (AntlerShieldBuffPickupVFX)
+            {
+                if (!ElusiveAntlersPickup.TryGetComponent(out BeginRapidlyActivatingAndDeactivating beginRapidlyActivatingAndDeactivating))
                 {
-                    destroyOnTimer = ElusiveAntlersPickup.AddComponent<DestroyOnTimer>();
+                    beginRapidlyActivatingAndDeactivating = ElusiveAntlersPickup.AddComponent<BeginRapidlyActivatingAndDeactivating>();
                 }
-                destroyOnTimer.duration = 90f;
-                Transform AntlerShieldBuffPickupVFX = ElusiveAntlersPickup.transform.Find("AntlerShieldBuffPickupVFX");
-                if (AntlerShieldBuffPickupVFX)
-                {
-                    if (!ElusiveAntlersPickup.TryGetComponent(out BeginRapidlyActivatingAndDeactivating beginRapidlyActivatingAndDeactivating))
-                    {
-                        beginRapidlyActivatingAndDeactivating = ElusiveAntlersPickup.AddComponent<BeginRapidlyActivatingAndDeactivating>();
-                    }
-                    beginRapidlyActivatingAndDeactivating.enabled = true;
-                    beginRapidlyActivatingAndDeactivating.blinkFrequency = 6f;
-                    beginRapidlyActivatingAndDeactivating.delayBeforeBeginningBlinking = 89f;
-                    beginRapidlyActivatingAndDeactivating.blinkingRootObject = AntlerShieldBuffPickupVFX.gameObject;
-                }
-            };
+                beginRapidlyActivatingAndDeactivating.enabled = true;
+                beginRapidlyActivatingAndDeactivating.blinkFrequency = 6f;
+                beginRapidlyActivatingAndDeactivating.delayBeforeBeginningBlinking = 89f;
+                beginRapidlyActivatingAndDeactivating.blinkingRootObject = AntlerShieldBuffPickupVFX.gameObject;
+            }
         }
     }
 }
