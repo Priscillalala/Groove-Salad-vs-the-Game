@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace GSvs
+namespace GSvs.Core.Util
 {
     public static class PatchClassProcessorExtensions
     {

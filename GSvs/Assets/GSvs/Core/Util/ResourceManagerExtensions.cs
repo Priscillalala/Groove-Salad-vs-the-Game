@@ -4,7 +4,7 @@ using UnityEngine.ResourceManagement;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 
-namespace GSvs
+namespace GSvs.Core.Util
 {
     public static class ResourceManagerExtensions
     {

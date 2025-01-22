@@ -15,7 +15,7 @@ namespace GSvs.RoR2.Items
         {
             if (purchaseInteraction.TryGetComponent(out chestServer))
             {
-                ChestDropEvents.OnChestItemDropServer += OnChestItemDropServer;
+                ChestEvents.OnChestItemDropServer += OnChestItemDropServer;
             }
             else if (purchaseInteraction.TryGetComponent(out rouletteChestServer))
             {
@@ -89,7 +89,7 @@ namespace GSvs.RoR2.Items
 
         public void OnDestroy()
         {
-            ChestDropEvents.OnChestItemDropServer -= OnChestItemDropServer;
+            ChestEvents.OnChestItemDropServer -= OnChestItemDropServer;
             if (rouletteChestServer)
             {
                 rouletteChestServer.onCycleCompletedServer.RemoveListener(OnChestOpenedServer);

@@ -1,23 +1,29 @@
-using HG;
-using MonoMod.Cil;
+using GSvs.Core.ContentManipulation;
+using HarmonyLib;
 using Mono.Cecil.Cil;
+using MonoMod.Cil;
 using RoR2;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
-using HarmonyLib;
 
 namespace GSvs.RoR2.Items
 {
-    [ContentModification]
     [HarmonyPatch]
-    public class SaleStar : IContentModification
+    public class SaleStar : ContentManipulatorInstance
     {
-        public void Initialize()
+        protected override void Enable()
         {
-            SceneDirector.onPostPopulateSceneServer += SceneDirector_onPostPopulateSceneServer;
+            SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
+            base.Enable();
+        }
+
+        protected override void Disable()
+        {
+            base.Disable();
+            SceneDirector.onPostPopulateSceneServer -= OnPostPopulateSceneServer;
         }
 
         [HarmonyILManipulator]
@@ -34,7 +40,7 @@ namespace GSvs.RoR2.Items
             c.Emit(OpCodes.Ldc_I4_0);
         }
 
-        private void SceneDirector_onPostPopulateSceneServer(SceneDirector sceneDirector)
+        private void OnPostPopulateSceneServer(SceneDirector sceneDirector)
         {
             if (!SceneInfo.instance.countsAsStage && !SceneInfo.instance.sceneDef.allowItemsToSpawnObjects)
             {

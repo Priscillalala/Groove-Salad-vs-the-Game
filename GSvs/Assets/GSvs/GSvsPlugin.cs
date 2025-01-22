@@ -1,4 +1,7 @@
 using BepInEx;
+using BepInEx.Logging;
+using GSvs.Core.AssetManipulation;
+using GSvs.Core.ContentManipulation;
 using GSvs.RoR2;
 using HarmonyLib;
 using HG.Reflection;
@@ -26,12 +29,17 @@ namespace GSvs
             NAME = "Groove_Salad_vs_the_Game",
             VERSION = "1.0.0";
 
+        public static new ManualLogSource Logger { get; private set; }
+        public static Harmony Harmony { get; private set; }
+        public static string RuntimeDirectory { get; private set; }
         public static string RuntimeAddressablesLocation { get; private set; }
 
         void Awake()
         {
-            string directory = Path.GetDirectoryName(Info.Location);
-            RuntimeAddressablesLocation = Path.Combine(directory, "aa");
+            Logger = base.Logger;
+            Harmony = new Harmony(GUID);
+            RuntimeDirectory = Path.GetDirectoryName(Info.Location);
+            RuntimeAddressablesLocation = Path.Combine(RuntimeDirectory, "aa");
             Logger.LogMessage("We're so back");
 
             string catalogPath = Path.Combine(RuntimeAddressablesLocation, $"catalog_{NAME}.json");
@@ -41,23 +49,33 @@ namespace GSvs
             {
                 Logger.LogMessage(key);
             }
-            Harmony harmony = new Harmony(GUID);
 
-            foreach (var attribute in SearchableAttribute.GetInstances<ContentModificationAttribute>())
+            foreach (var attribute in SearchableAttribute.GetInstances<ContentManipulatorAttribute>())
             {
                 Type targetType = (Type)attribute.target;
-                IContentModification contentModification = (IContentModification)Activator.CreateInstance(targetType);
-                contentModification.Initialize();
-                PatchClassProcessor patchClassProcessor = harmony.CreateClassProcessor(targetType);
-                patchClassProcessor.Patch();
-                patchClassProcessor.Unpatch();
+                if (targetType.IsAbstract && !targetType.IsSealed)
+                {
+                    continue;
+                }
+
+                PatchClassProcessor patcher = Harmony.CreateClassProcessor(targetType);
+                if (targetType.IsAbstract)
+                {
+                    patcher.Patch();
+                }
+                else
+                {
+                    ContentManipulatorInstance contentManipulatorInstance = (ContentManipulatorInstance)Activator.CreateInstance(targetType);
+                    contentManipulatorInstance.patcher = patcher;
+                    contentManipulatorInstance.SetEnabled(true);
+                }
 
                 var methods = targetType.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
                 foreach (var method in methods)
                 {
                     if (Attribute.IsDefined(method, typeof(AssetManipulatorAttribute)))
                     {
-                        AssetManipulatorAttribute.Apply(method);
+                        AssetManipulatorAttribute.ExecuteAsync(method);
                     }
                 }
             }
