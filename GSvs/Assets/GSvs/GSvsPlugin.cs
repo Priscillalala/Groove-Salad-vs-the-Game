@@ -48,7 +48,9 @@ namespace GSvs
                 Type targetType = (Type)attribute.target;
                 IContentModification contentModification = (IContentModification)Activator.CreateInstance(targetType);
                 contentModification.Initialize();
-                harmony.CreateClassProcessor(targetType).Patch();
+                PatchClassProcessor patchClassProcessor = harmony.CreateClassProcessor(targetType);
+                patchClassProcessor.Patch();
+                patchClassProcessor.Unpatch();
 
                 var methods = targetType.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
                 foreach (var method in methods)
