@@ -12,12 +12,12 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "RoR2.dll",
-        "MMHOOK_RoR2.dll",
         "BepInEx.dll",
         "HGCSharpUtils.dll",
         "Mono.Cecil.dll",
         "MonoMod.Utils.dll",
-        "0Harmony.dll"
+        "0Harmony.dll",
+        "SimpleJSON.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

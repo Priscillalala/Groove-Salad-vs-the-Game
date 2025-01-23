@@ -1,37 +1,44 @@
+using GSvs.Core.Configuration;
 using GSvs.Core.Util;
 using HarmonyLib;
 
 namespace GSvs.Core.ContentManipulation
 {
-    [ContentManipulator]
-    public abstract class ContentManipulatorInstance
+    public abstract class ContentManipulatorInstance<This> where This : ContentManipulatorInstance<This>
     {
-        public PatchClassProcessor patcher;
+        [Config("Enabled")]
+        public readonly static ConfigValue<bool> enabled;
 
-        private bool enabled;
+        protected PatchClassProcessor patcher;
 
-        public void SetEnabled(bool newEnabled)
+        public ContentManipulatorInstance()
         {
-            if (enabled != newEnabled)
+            patcher = GSvsPlugin.Harmony.CreateClassProcessor(typeof(This));
+            if (enabled)
             {
-                enabled = newEnabled;
-                if (enabled)
-                {
-                    Enable();
-                }
-                else
-                {
-                    Disable();
-                }
+                Install();
+            }
+            enabled.ValueChanged += UpdateEnabled;
+        }
+
+        public void UpdateEnabled()
+        {
+            if (enabled)
+            {
+                Install();
+            }
+            else
+            {
+                Uninstall();
             }
         }
 
-        protected virtual void Enable()
+        protected virtual void Install()
         {
             patcher.Patch();
         }
 
-        protected virtual void Disable()
+        protected virtual void Uninstall()
         {
             patcher.Unpatch();
         }

@@ -26,7 +26,7 @@ namespace GSvs.RoR2
         {
             if (NetworkServer.active)
             {
-                onChestItemDropServer(__instance);
+                onChestItemDropServer?.Invoke(__instance);
             }
         }
     }

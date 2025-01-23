@@ -1,3 +1,4 @@
+using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
 using HarmonyLib;
 using Mono.Cecil.Cil;
@@ -11,18 +12,25 @@ using UnityEngine.Networking;
 
 namespace GSvs.RoR2.Items
 {
+    [ContentManipulator]
+    [Config(section = "Sale Star Rework")]
     [HarmonyPatch]
-    public class SaleStar : ContentManipulatorInstance
+    public class SaleStar : ContentManipulatorInstance<SaleStar>
     {
-        protected override void Enable()
+        [Config("Affected Chests Count")]
+        public static ConfigValue<int> affectedChestsCount = 2;
+        [Config("Affected Chests Count Per Stack")]
+        public static ConfigValue<int> affectedChestsCountPerStack = 1;
+
+        protected override void Install()
         {
             SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
-            base.Enable();
+            base.Install();
         }
 
-        protected override void Disable()
+        protected override void Uninstall()
         {
-            base.Disable();
+            base.Uninstall();
             SceneDirector.onPostPopulateSceneServer -= OnPostPopulateSceneServer;
         }
 
@@ -61,7 +69,7 @@ namespace GSvs.RoR2.Items
             Debug.Log($"P interaction count: {purchaseInteractionInstances.Count}");
             List<PurchaseInteraction> shuffledPurchaseInteractionInstances = new List<PurchaseInteraction>(purchaseInteractionInstances);
             Util.ShuffleList(shuffledPurchaseInteractionInstances, rng);
-            int affectedChestCount = saleStarCount + 1;
+            int remainingAffectedChestsCount = affectedChestsCount + (saleStarCount - 1) * affectedChestsCountPerStack;
             foreach (PurchaseInteraction purchaseInteraction in shuffledPurchaseInteractionInstances)
             {
                 if (!purchaseInteraction.saleStarCompatible)
@@ -89,7 +97,7 @@ namespace GSvs.RoR2.Items
                 NetworkServer.Spawn(attachment);
 
                 Debug.Log($"Affected {purchaseInteraction.name}");
-                if (--affectedChestCount <= 0)
+                if (--remainingAffectedChestsCount <= 0)
                 {
                     break;
                 }
