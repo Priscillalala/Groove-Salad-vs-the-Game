@@ -54,7 +54,6 @@ namespace GSvs
             Logger = base.Logger;
             ConfigFiles = new Dictionary<string, ConfigFile>();
             Harmony = new Harmony(GUID);
-            Harmony.PatchAll(typeof(GSvsPlugin));
             RuntimeDirectory = Path.GetDirectoryName(Info.Location);
             RuntimeAddressablesLocation = Path.Combine(RuntimeDirectory, "aa");
             Logger.LogMessage("We're so back");
@@ -82,37 +81,6 @@ namespace GSvs
                 }
             }
 #endif
-
-            foreach (var attribute in SearchableAttribute.GetInstances<ContentManipulatorAttribute>())
-            {
-                Type targetType = (Type)attribute.target;
-                if (targetType.IsAbstract && !targetType.IsSealed)
-                {
-                    continue;
-                }
-
-                PatchClassProcessor patcher = Harmony.CreateClassProcessor(targetType);
-                if (targetType.IsAbstract)
-                {
-                    patcher.Patch();
-                }
-                else
-                {
-                    /*ContentManipulatorInstance contentManipulatorInstance = (ContentManipulatorInstance)Activator.CreateInstance(targetType);
-                    contentManipulatorInstance.patcher = patcher;
-                    contentManipulatorInstance.SetEnabled(true);*/
-                }
-
-                var methods = targetType.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
-                foreach (var method in methods)
-                {
-                    if (Attribute.IsDefined(method, typeof(AssetManipulatorAttribute)))
-                    {
-                        AssetManipulatorAttribute.ExecuteAsync(method);
-                    }
-                }
-            }
-
             ContentManager.collectContentPackProviders += add => add(new GSvsRoR2Content());
         }
 
@@ -125,96 +93,6 @@ namespace GSvs
                 ConfigFiles.Add(configPath, configFile);
             }
             return configFile;
-        }
-
-        [HarmonyPostfix, HarmonyPatch(typeof(Language), nameof(Language.GetLanguageRootFolders))]
-        private static void RegisterLanguage(ref List<string> __result)
-        {
-            __result.Add(Path.Combine(RuntimeDirectory, "Language"));
-        }
-
-        [HarmonyILManipulator, HarmonyPatch(typeof(Language), nameof(Language.LoadTokensFromData))]
-        private static void HandleConditionalLanguage(ILContext il)
-        {
-            ILCursor c = new ILCursor(il);
-            int locJsonIndex = -1;
-            c.GotoNext(MoveType.After,
-                x => x.MatchCallOrCallvirt(nameof(JSON), nameof(JSON.Parse)),
-                x => x.MatchStloc(out locJsonIndex)
-                );
-            ILLabel breakLabel = null;
-            c.GotoNext(MoveType.After,
-                x => x.MatchLdloc(locJsonIndex),
-                x => x.MatchLdnull(),
-                x => x.MatchCallOrCallvirt<JSONNode>("op_Inequality"),
-                x => x.MatchBrfalse(out breakLabel)
-                );
-
-            c.Emit(OpCodes.Ldloc, locJsonIndex);
-            c.EmitDelegate<Func<JSONNode, bool>>(jsonNode =>
-            {
-                JSONNode modNode = jsonNode["mod"];
-                if (modNode == null || !modNode.IsString || modNode.Value != GUID)
-                {
-                    return true;
-                }
-                JSONNode conditionNode = jsonNode["condition"];
-                if (conditionNode == null || !conditionNode.IsString)
-                {
-                    return true;
-                }
-                string condition = conditionNode.Value;
-                if (string.IsNullOrEmpty(condition))
-                {
-                    return true;
-                }
-                int typeSeperator = condition.LastIndexOf('.');
-                if (typeSeperator < 0)
-                {
-                    return true;
-                }
-                string typeString = condition[..typeSeperator];
-                Type type = Type.GetType(typeString, false);
-                if (type == null)
-                {
-                    return true;
-                }
-                string memberString = condition[(typeSeperator + 1)..];
-                const BindingFlags MEMBER_BINDING_FLAGS = BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy;
-                FieldInfo field = type.GetField(memberString, MEMBER_BINDING_FLAGS);
-                if (field != null)
-                {
-                    if (field.FieldType == typeof(bool))
-                    {
-                        return (bool)field.GetValue(null);
-                    }
-                    else if (typeof(IConfigValue).IsAssignableFrom(field.FieldType))
-                    {
-                        IConfigValue configValue = (IConfigValue)field.GetValue(null);
-                        if (configValue.ValueType == typeof(bool))
-                        {
-                            return (bool)configValue.BoxedValue;
-                        }
-                    }
-                }
-                PropertyInfo property = type.GetProperty(memberString, MEMBER_BINDING_FLAGS);
-                if (property != null && property.CanRead)
-                {
-                    if (property.PropertyType == typeof(bool))
-                    {
-                        return (bool)property.GetValue(null);
-                    }
-                    else if (typeof(IConfigValue).IsAssignableFrom(property.PropertyType))
-                    {
-                        IConfigValue configValue = (IConfigValue)property.GetValue(null);
-                        if (configValue.ValueType == typeof(bool))
-                        {
-                            return (bool)configValue.BoxedValue;
-                        }
-                    }
-                }
-                return true;
-            });
         }
     }
 }

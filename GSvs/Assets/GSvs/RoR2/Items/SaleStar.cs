@@ -1,3 +1,4 @@
+using GSvs.Core;
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
 using HarmonyLib;
@@ -22,15 +23,15 @@ namespace GSvs.RoR2.Items
         [Config("Affected Chests Count Per Stack")]
         public static ConfigValue<int> affectedChestsCountPerStack = 1;
 
-        protected override void Install()
+        protected override void OnInstall()
         {
             SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
-            base.Install();
+            base.OnInstall();
         }
 
-        protected override void Uninstall()
+        protected override void OnUninstall()
         {
-            base.Uninstall();
+            base.OnUninstall();
             SceneDirector.onPostPopulateSceneServer -= OnPostPopulateSceneServer;
         }
 

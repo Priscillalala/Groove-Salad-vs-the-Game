@@ -1,19 +1,16 @@
 using BepInEx.Configuration;
 using System;
-using System.Collections.Generic;
 
 namespace GSvs.Core.Configuration
 {
-    public struct ConfigValue<T> : IConfigValue
+    public struct ConfigValue<T> : ConfigAttribute.ICustomConfigImplementation, IValueWrapper<T>
     {
         private readonly T defaultValue;
         private ConfigEntry<T> source;
 
-        public event Action ValueChanged;
-
         public readonly T Value => source != null ? source.Value : defaultValue;
-        readonly object IConfigValue.BoxedValue => Value;
-        readonly Type IConfigValue.ValueType => typeof(T);
+
+        public event Action ValueChanged;
 
         public ConfigValue(T defaultValue)
         {
@@ -22,22 +19,15 @@ namespace GSvs.Core.Configuration
             ValueChanged = null;
         }
 
-        void IConfigValue.BindValue(ConfigEntryBase source)
+        public ConfigEntryBase Bind(ConfigFile configFile, ConfigDefinition configDefinition, ConfigDescription configDescription)
         {
-            if (this.source != null)
-            {
-                throw new InvalidOperationException();
-            }
-            if (source is not ConfigEntry<T>)
-            {
-                throw new ArgumentException(nameof(source));
-            }
-            this.source = (ConfigEntry<T>)source;
-            if (!EqualityComparer<T>.Default.Equals(this.source.Value, defaultValue))
+            source = configFile.Bind(configDefinition, defaultValue, configDescription);
+            if (!Equals(Value, defaultValue))
             {
                 ValueChanged?.Invoke();
             }
-            this.source.SettingChanged += OnSourceSettingChanged;
+            source.SettingChanged += OnSourceSettingChanged;
+            return source;
         }
 
         private readonly void OnSourceSettingChanged(object sender, EventArgs e)
