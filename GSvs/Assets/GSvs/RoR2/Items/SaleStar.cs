@@ -18,10 +18,15 @@ namespace GSvs.RoR2.Items
     [HarmonyPatch]
     public class SaleStar : ContentManipulatorInstance<SaleStar>
     {
-        [Config("Affected Chests Count")]
-        public static ConfigValue<int> affectedChestsCount = 2;
-        [Config("Affected Chests Count Per Stack")]
-        public static ConfigValue<int> affectedChestsCountPerStack = 1;
+        public static int start;
+        [Config(key = "Affected Chests Count")]
+        public static readonly RuntimeConfig<int> affectedChestsCount = 2;
+        [Config(key = "Affected Chests Count Per Stack")]
+        public static readonly RuntimeConfig<int> affectedChestsCountPerStack = 1;
+        public static int a;
+        public static int b;
+        public static int c;
+        public static int end;
 
         protected override void OnInstall()
         {

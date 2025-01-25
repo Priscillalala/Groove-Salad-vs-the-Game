@@ -4,10 +4,10 @@ using RoR2;
 using System;
 using UnityEngine.Networking;
 
-namespace GSvs.RoR2
+namespace GSvs.Events
 {
     [HarmonyPatch(typeof(ChestBehavior))]
-    public class ChestEvents : EventsPatcher<ChestEvents>
+    public abstract class ChestEvents : EventsPatcher<ChestEvents>
     {
         private static Action<ChestBehavior> onChestItemDropServer;
 

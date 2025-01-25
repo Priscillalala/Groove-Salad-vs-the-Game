@@ -9,11 +9,6 @@ namespace GSvs.Core.Configuration
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Field)]
     public class ConfigAttribute : Attribute
     {
-        public interface ICustomConfigImplementation
-        {
-            public ConfigEntryBase Bind(ConfigFile configFile, ConfigDefinition configDefinition, ConfigDescription configDescription);
-        }
-
         public string section;
         public string key;
         public string description;
@@ -51,7 +46,8 @@ namespace GSvs.Core.Configuration
             {
                 return;
             }
-            string configPath = Path.Combine(type.Namespace.Split('.'));
+            string configPath = type.Namespace.Replace('_', ' ');
+            configPath = Path.Combine(configPath.Split('.'));
             configPath = Path.ChangeExtension(configPath, "cfg");
             ConfigFile configFile = GSvsPlugin.GetConfigFile(configPath, false);
             FieldInfo[] fields = type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
@@ -67,29 +63,22 @@ namespace GSvs.Core.Configuration
                 {
                     continue;
                 }
-                Type settingType = field.FieldType;
-                object defaultValue = field.GetValue(null);
-
+                if (!typeof(IConfigValue).IsAssignableFrom(field.FieldType))
+                {
+                    continue;
+                }
+                IConfigValue configValue = (IConfigValue)(field.GetValue(null) ?? Activator.CreateInstance(field.FieldType));
+               
                 ConfigDefinition configDefinition = new ConfigDefinition(fieldConfig.section, fieldConfig.key);
                 ConfigDescription configDescription = string.IsNullOrEmpty(fieldConfig.description) 
                     ? null 
                     : new ConfigDescription(fieldConfig.description);
 
-                if (typeof(ICustomConfigImplementation).IsAssignableFrom(settingType))
+                configValue.Bind(configFile, configDefinition, configDescription);
+                if (field.FieldType.IsValueType)
                 {
-                    if (defaultValue is ICustomConfigImplementation customConfigImplementation)
-                    {
-                        customConfigImplementation.Bind(configFile, configDefinition, configDescription);
-                        if (settingType.IsValueType)
-                        {
-                            field.SetValue(null, customConfigImplementation);
-                        }
-                    }
-                    continue;
+                    field.SetValue(null, configValue);
                 }
-
-                ConfigEntryBase configEntry = configFile.Bind(settingType, configDefinition, defaultValue, configDescription);
-                field.SetValue(null, configEntry.BoxedValue);
             }
         }
     }

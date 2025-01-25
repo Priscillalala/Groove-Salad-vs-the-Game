@@ -6,8 +6,8 @@ namespace GSvs.Core.ContentManipulation
 {
     public abstract class ContentManipulatorInstance<This> where This : ContentManipulatorInstance<This>, new()
     {
-        [Config("Installed")]
-        public readonly static ConfigValue<bool> installed;
+        [Config(key = "Installed")]
+        public static readonly RuntimeConfig<bool> installed;
 
         protected PatchClassProcessor patcher;
 

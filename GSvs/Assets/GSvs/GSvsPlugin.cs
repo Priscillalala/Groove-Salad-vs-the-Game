@@ -1,26 +1,12 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using GSvs.Core.AssetManipulation;
-using GSvs.Core.Configuration;
-using GSvs.Core.ContentManipulation;
 using GSvs.RoR2;
-using GSvs.RoR2.Items;
 using HarmonyLib;
-using HG.Reflection;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using RoR2;
 using RoR2.ContentManagement;
-using SimpleJSON;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Security;
 using System.Security.Permissions;
-using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Path = System.IO.Path;
 using SearchableAttribute = HG.Reflection.SearchableAttribute;
@@ -47,6 +33,7 @@ namespace GSvs
         public static Harmony Harmony { get; private set; }
         public static string RuntimeDirectory { get; private set; }
         public static string RuntimeAddressablesLocation { get; private set; }
+        public static string RuntimeLanguageOverridesLocation { get; private set; }
 
         void Awake()
         {
@@ -56,11 +43,13 @@ namespace GSvs
             Harmony = new Harmony(GUID);
             RuntimeDirectory = Path.GetDirectoryName(Info.Location);
             RuntimeAddressablesLocation = Path.Combine(RuntimeDirectory, "aa");
+            RuntimeLanguageOverridesLocation = Path.Combine(RuntimeDirectory, "LanguageOverrides");
             Logger.LogMessage("We're so back");
 
             string catalogPath = Path.Combine(RuntimeAddressablesLocation, $"catalog_{NAME}.json");
             var locator = Addressables.LoadContentCatalogAsync(catalogPath).WaitForCompletion();
             Logger.LogMessage("Loaded catalog:");
+
 #if false
             ElusiveAntlers.enabled = true;
             SaleStar.enabled = true;
