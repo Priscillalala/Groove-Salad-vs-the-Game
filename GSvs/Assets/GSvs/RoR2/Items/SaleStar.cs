@@ -25,12 +25,14 @@ namespace GSvs.RoR2.Items
 
         protected override void OnInstall()
         {
+            GSvsPlugin.Logger.LogMessage("Installed SaleStar!");
             base.OnInstall();
             SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
         }
 
         protected override void OnUninstall()
         {
+            GSvsPlugin.Logger.LogMessage("UnInstalled SaleStar!");
             base.OnUninstall();
             SceneDirector.onPostPopulateSceneServer -= OnPostPopulateSceneServer;
         }

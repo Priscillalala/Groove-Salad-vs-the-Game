@@ -1,3 +1,4 @@
+using BepInEx.Logging;
 using GSvs.Core.Configuration;
 using GSvs.Core.Util;
 using HarmonyLib;
@@ -33,6 +34,7 @@ namespace GSvs
                 JSONNode configArrayNode = configArray[i];
                 if (!configArrayNode.IsString || !SerializedMemberUtil.TryParseMember(configArrayNode.Value, out Type type, out string memberName))
                 {
+                    GSvsPlugin.Logger.LogWarning($"{configArrayNode.Value} failed to parse member");
                     continue;
                 }
                 const BindingFlags MEMBER_BINDING_FLAGS = BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy;
@@ -55,6 +57,10 @@ namespace GSvs
                     }
                 }
             }
+            foreach (JSONNode stringNode in stringsNode.Children)
+            {
+                stringNode.Value = string.Format(stringNode.Value, args);
+            }
             return true;
         }
 
@@ -64,7 +70,7 @@ namespace GSvs
             ILCursor c = new ILCursor(il);
             int locJsonIndex = -1;
             c.GotoNext(MoveType.After,
-                x => x.MatchCallOrCallvirt(nameof(JSON), nameof(JSON.Parse)),
+                x => x.MatchCallOrCallvirt(typeof(JSON), nameof(JSON.Parse)),
                 x => x.MatchStloc(out locJsonIndex)
                 );
             c.GotoNext(MoveType.After,

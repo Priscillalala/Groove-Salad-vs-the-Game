@@ -12,7 +12,7 @@ namespace GSvs.Core.ContentManipulation
 {
     public abstract class ContentManipulator<This> where This : ContentManipulator<This>
     {
-        [Config("Installed")]
+        [Config(key = "Installed")]
         public static readonly ConfigValue<bool> installed = true;
 
         public static PatchClassProcessor Patcher { get; private set; }

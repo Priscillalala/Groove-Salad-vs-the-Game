@@ -31,6 +31,23 @@ MonoBehaviour:
   StagingPaths:
   - <BuildPath>/aa
   RuntimeLoadPath: '{GSvs.GSvsPlugin.RuntimeAddressablesLocation}'
+--- !u!114 &-2129044661798538101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b243ff405b33b94dbf5b6775dd9aa33, type: 3}
+  m_Name: Files
+  m_EditorClassIdentifier: 
+  StagingPaths:
+  - <BuildPath>
+  includeMetaFiles: 0
+  files:
+  - {fileID: 102900000, guid: 4b9cb6a3d525ab647b2030d0f113c041, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +64,7 @@ MonoBehaviour:
   - {fileID: 233332829815412892}
   - {fileID: -9167426302966430404}
   - {fileID: -8027271282418891311}
+  - {fileID: -2129044661798538101}
   identity: {fileID: 233332829815412892}
   QuickAccess: 1
 --- !u!114 &233332829815412892

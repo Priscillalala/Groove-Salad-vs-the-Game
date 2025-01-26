@@ -3,6 +3,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using GSvs.RoR2;
 using HarmonyLib;
+using RoR2;
 using RoR2.ContentManagement;
 using System.Collections.Generic;
 using System.Security;
@@ -76,12 +77,22 @@ namespace GSvs
         public static ConfigFile GetConfigFile(string configPath, bool saveOnInit = false)
         {
             configPath = Path.GetFullPath(Path.Combine(Paths.ConfigPath, configPath));
+            Logger.LogMessage($"Get Config File: {configPath}");
             if (!ConfigFiles.TryGetValue(configPath, out ConfigFile configFile))
             {
                 configFile = new ConfigFile(configPath, saveOnInit, Info.Metadata);
                 ConfigFiles.Add(configPath, configFile);
             }
             return configFile;
+        }
+
+        [ConCommand(commandName = "gsvs_reload_config_files")]
+        public static void ReloadConfigFiles(ConCommandArgs conCommandArgs)
+        {
+            foreach (var configFile in ConfigFiles.Values)
+            {
+                configFile.Reload();
+            }
         }
     }
 }
