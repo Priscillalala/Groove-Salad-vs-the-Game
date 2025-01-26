@@ -14,11 +14,6 @@ namespace GSvs.Core.Configuration
         public string description;
         public Type updater;
 
-        public ConfigAttribute(string key = default)
-        {
-            this.key = key;
-        }
-
         public void CompoundWith(ConfigAttribute other)
         {
             if (string.IsNullOrEmpty(section))

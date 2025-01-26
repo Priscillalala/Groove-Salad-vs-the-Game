@@ -8,10 +8,13 @@ namespace GSvs.RoR2.Items
 {
     [ContentManipulator]
     [Config(section = "Elusive Antlers Adjustment")]
-    public class ElusiveAntlers : StaticContentManipulator<ElusiveAntlers>
+    public class ElusiveAntlers : ContentManipulator<ElusiveAntlers>
     {
-        [Config("Max Pickup Lifetime", description = "Please note that Elusive Antlers pickups will also despawn after one minute if the player is far enough away")]
-        public static readonly Config<float> pickupLifetime = 90f;
+        [Config(
+            key = "Max Pickup Lifetime", 
+            description = "Please note that Elusive Antlers pickups will also despawn after one minute if the player is far enough away"
+            )]
+        public static readonly ConfigValue<float> pickupLifetime = 90f;
 
         [AssetManipulator]
         private static void SetAntlersPickupDuration(

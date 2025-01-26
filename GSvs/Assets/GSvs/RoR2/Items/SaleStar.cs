@@ -1,5 +1,5 @@
-using GSvs.Core;
 using GSvs.Core.Configuration;
+using GSvs.Core.Configuration.Updaters;
 using GSvs.Core.ContentManipulation;
 using HarmonyLib;
 using Mono.Cecil.Cil;
@@ -14,9 +14,9 @@ using UnityEngine.Networking;
 namespace GSvs.RoR2.Items
 {
     [ContentManipulator]
-    [Config(section = "Sale Star Rework", updater = typeof(UpdateAlways))]
+    [Config(section = "Sale Star Rework", updater = typeof(UpdateBetweenRuns))]
     [HarmonyPatch]
-    public class SaleStar : ContentManipulatorInstance<SaleStar>
+    public class SaleStar : ContentManipulator<SaleStar>
     {
         [Config(key = "Affected Chests Count")]
         public static readonly ConfigValue<int> affectedChestsCount = 2;
@@ -49,7 +49,7 @@ namespace GSvs.RoR2.Items
             c.Emit(OpCodes.Ldc_I4_0);
         }
 
-        private void OnPostPopulateSceneServer(SceneDirector sceneDirector)
+        private static void OnPostPopulateSceneServer(SceneDirector sceneDirector)
         {
             if (!SceneInfo.instance.countsAsStage && !SceneInfo.instance.sceneDef.allowItemsToSpawnObjects)
             {
