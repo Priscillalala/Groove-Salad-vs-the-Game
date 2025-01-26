@@ -1,9 +1,5 @@
-using UnityEngine;
-using UnityEngine.AddressableAssets;
-using RoR2.ExpansionManagement;
 using RoR2.ContentManagement;
 using System.Collections;
-using RoR2;
 
 namespace GSvs.RoR2
 {

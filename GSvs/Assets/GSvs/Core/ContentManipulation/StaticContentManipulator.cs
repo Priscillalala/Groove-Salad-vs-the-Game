@@ -1,32 +1,18 @@
-using BepInEx.Configuration;
 using GSvs.Core.AssetManipulation;
 using GSvs.Core.Configuration;
 
 namespace GSvs.Core.ContentManipulation
 {
-    public abstract class StaticContentManipulator<This> where This : StaticContentManipulator<This>
+    public abstract class StaticContentManipulator<This> : BaseContentManipulator<This> where This : StaticContentManipulator<This>
     {
         [Config("Installed")]
-        public static bool installed;
+        public static readonly Config<bool> installed = true;
 
-        public static ConfigFile config;
+        protected override bool IsInstalled() => installed;
 
-        static StaticContentManipulator()
+        protected override void OnInstall()
         {
-            ContentManipulatorAttribute.InitImplementation += Init;
-        }
-
-        private static void Init()
-        {
-            if (installed)
-            {
-                OnInstall();
-            }
-        }
-
-        private static void OnInstall()
-        {
-            GSvsPlugin.Harmony.CreateClassProcessor(typeof(This)).Patch();
+            base.OnInstall();
             AssetManipulatorAttribute.ProcessAsync(typeof(This));
         }
     }

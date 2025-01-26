@@ -1,8 +1,5 @@
-using GSvs.Core.Configuration;
-using HG.Reflection;
 using RoR2;
 using System;
-using System.Runtime.CompilerServices;
 using SearchableAttribute = HG.Reflection.SearchableAttribute;
 
 namespace GSvs.Core.ContentManipulation
@@ -17,8 +14,6 @@ namespace GSvs.Core.ContentManipulation
             {
                 Type contentManipulatorType = (Type)contentManipulatorAttribute.target;
                 Activator.CreateInstance(contentManipulatorType);
-                //RuntimeHelpers.RunClassConstructor(contentManipulatorType.TypeHandle);
-                //ConfigAttribute.Process(contentManipulatorType);
             }
         }
     }

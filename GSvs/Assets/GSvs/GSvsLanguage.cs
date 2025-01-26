@@ -45,10 +45,10 @@ namespace GSvs
                         if (configValue != null)
                         {
                             args[i] = configValue.BoxedValue;
-                            if (configValue.ValueCanChange)
+                            if (configValue.ValueUpdater != null)
                             {
-                                configValue.ValueChanged -= LanguageUtil.ReloadAllLanguages;
-                                configValue.ValueChanged += LanguageUtil.ReloadAllLanguages;
+                                configValue.ValueUpdater.OnValueUpdated -= LanguageUtil.ReloadLanguages;
+                                configValue.ValueUpdater.OnValueUpdated += LanguageUtil.ReloadLanguages;
                             }
                             continue;
                         }

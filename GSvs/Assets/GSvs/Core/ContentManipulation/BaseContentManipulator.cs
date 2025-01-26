@@ -2,45 +2,54 @@ using GSvs.Core.Configuration;
 using GSvs.Core.Util;
 using GSvs.Events;
 using HarmonyLib;
+using RoR2;
 using System.Collections.Generic;
+using System.IO;
+using Path = System.IO.Path;
 
 namespace GSvs.Core.ContentManipulation
 {
     public abstract class BaseContentManipulator<This> where This : BaseContentManipulator<This>
     {
-        protected static PatchClassProcessor patcher;
-        protected static string languageOverridesRootFolder;
+        protected static PatchClassProcessor Patcher { get; private set; }
+        protected static string LanguageOverridesRootFolder { get; private set; }
 
         public BaseContentManipulator()
         {
             ConfigAttribute.Process(typeof(This));
-            patcher = GSvsPlugin.Harmony.CreateClassProcessor(typeof(This));
-            SetLanguageOverridesFolder();
+            Patcher = GSvsPlugin.Harmony.CreateClassProcessor(typeof(This));
+            LanguageOverridesRootFolder = GetLanguageOverridesRootFolder();
             if (IsInstalled())
             {
                 OnInstall();
             }
         }
 
-        public virtual void SetLanguageOverridesFolder()
+        protected virtual string GetLanguageOverridesRootFolder()
         {
-
+            string[] paths = typeof(This).FullName.Split('.');
+            paths[0] = GSvsPlugin.RuntimeLanguageOverridesLocation;
+            return Path.Combine(paths);
         }
 
-        public virtual bool IsInstalled() => true;
+        protected virtual bool IsInstalled() => true;
 
         protected virtual void OnInstall()
         {
-            patcher.Patch();
-            if (!string.IsNullOrEmpty(languageOverridesRootFolder))
+            Patcher.Patch();
+            if (!string.IsNullOrEmpty(LanguageOverridesRootFolder) && Directory.Exists(LanguageOverridesRootFolder))
             {
                 LanguageEvents.CollectLanguageOverrideRootFolders += CollectLanguageOverrideRootFolders;
+                if (Language.IsAnyLanguageLoaded())
+                {
+                    RoR2Application.instance.StartCoroutine(LanguageUtil.RebuildLanguagesCoroutine());
+                }
             }
         }
 
         protected static void CollectLanguageOverrideRootFolders(List<string> list)
         {
-            list.Add(languageOverridesRootFolder);
+            list.Add(LanguageOverridesRootFolder);
         }
     }
 }

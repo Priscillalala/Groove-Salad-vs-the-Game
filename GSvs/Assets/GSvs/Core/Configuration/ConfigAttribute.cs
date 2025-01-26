@@ -12,6 +12,7 @@ namespace GSvs.Core.Configuration
         public string section;
         public string key;
         public string description;
+        public Type updater;
 
         public ConfigAttribute(string key = default)
         {
@@ -32,6 +33,7 @@ namespace GSvs.Core.Configuration
             {
                 description = other.description;
             }
+            updater ??= other.updater;
         }
 
         public bool IsValid()
@@ -66,7 +68,7 @@ namespace GSvs.Core.Configuration
                 if (!typeof(IConfigValue).IsAssignableFrom(field.FieldType))
                 {
                     continue;
-                }
+                }                
                 IConfigValue configValue = (IConfigValue)(field.GetValue(null) ?? Activator.CreateInstance(field.FieldType));
                
                 ConfigDefinition configDefinition = new ConfigDefinition(fieldConfig.section, fieldConfig.key);
@@ -74,11 +76,14 @@ namespace GSvs.Core.Configuration
                     ? null 
                     : new ConfigDescription(fieldConfig.description);
 
-                configValue.Bind(configFile, configDefinition, configDescription);
-                if (field.FieldType.IsValueType)
+                ConfigValueUpdater configValueUpdater = null;
+                if (fieldConfig.updater != null && typeof(ConfigValueUpdater).IsAssignableFrom(fieldConfig.updater))
                 {
-                    field.SetValue(null, configValue);
+                    configValueUpdater = (ConfigValueUpdater)Activator.CreateInstance(fieldConfig.updater);
                 }
+
+                configValue.Bind(configFile, configDefinition, configDescription, configValueUpdater);
+                field.SetValue(null, configValue);
             }
         }
     }

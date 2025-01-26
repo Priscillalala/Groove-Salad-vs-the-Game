@@ -1,54 +1,54 @@
 using GSvs.Core.Configuration;
 using GSvs.Core.Util;
-using HarmonyLib;
+using GSvs.Events;
+using RoR2;
+using System.IO;
 
 namespace GSvs.Core.ContentManipulation
 {
-    public abstract class ContentManipulatorInstance<This> where This : ContentManipulatorInstance<This>, new()
+    public abstract class ContentManipulatorInstance<This> : BaseContentManipulator<This> where This : ContentManipulatorInstance<This>
     {
         [Config(key = "Installed")]
-        public static readonly RuntimeConfig<bool> installed;
+        public static readonly RuntimeConfig<bool> installed = true;
 
-        protected PatchClassProcessor patcher;
+        private static bool wasInstalled;
 
-        static ContentManipulatorInstance()
+        protected override bool IsInstalled() => installed;
+
+        public ContentManipulatorInstance() : base() 
         {
-            ContentManipulatorAttribute.InitImplementation += Init;
+            wasInstalled = IsInstalled();
+            installed.ValueChanged += UpdateInstallation;
         }
 
-        private static void Init()
+        private void UpdateInstallation()
         {
-            This instance = new This
+            bool isInstalled = IsInstalled();
+            if (wasInstalled != isInstalled)
             {
-                patcher = GSvsPlugin.Harmony.CreateClassProcessor(typeof(This))
-            };
-            if (installed)
-            {
-                instance.OnInstall();
+                if (isInstalled)
+                {
+                    OnInstall();
+                }
+                else
+                {
+                    OnUninstall();
+                }
+                wasInstalled = isInstalled;
             }
-            installed.ValueChanged += instance.UpdateInstallation;
-        }
-
-        public void UpdateInstallation()
-        {
-            if (installed)
-            {
-                OnInstall();
-            }
-            else
-            {
-                OnUninstall();
-            }
-        }
-
-        protected virtual void OnInstall()
-        {
-            patcher.Patch();
         }
 
         protected virtual void OnUninstall()
         {
-            patcher.Unpatch();
+            Patcher.Unpatch();
+            if (!string.IsNullOrEmpty(LanguageOverridesRootFolder) && Directory.Exists(LanguageOverridesRootFolder))
+            {
+                LanguageEvents.CollectLanguageOverrideRootFolders -= CollectLanguageOverrideRootFolders;
+                if (Language.IsAnyLanguageLoaded())
+                {
+                    RoR2Application.instance.StartCoroutine(LanguageUtil.RebuildLanguagesCoroutine());
+                }
+            }
         }
     }
 }

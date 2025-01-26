@@ -14,24 +14,19 @@ using UnityEngine.Networking;
 namespace GSvs.RoR2.Items
 {
     [ContentManipulator]
-    [Config(section = "Sale Star Rework")]
+    [Config(section = "Sale Star Rework", updater = typeof(UpdateAlways))]
     [HarmonyPatch]
     public class SaleStar : ContentManipulatorInstance<SaleStar>
     {
-        public static int start;
         [Config(key = "Affected Chests Count")]
-        public static readonly RuntimeConfig<int> affectedChestsCount = 2;
+        public static readonly ConfigValue<int> affectedChestsCount = 2;
         [Config(key = "Affected Chests Count Per Stack")]
-        public static readonly RuntimeConfig<int> affectedChestsCountPerStack = 1;
-        public static int a;
-        public static int b;
-        public static int c;
-        public static int end;
+        public static readonly ConfigValue<int> affectedChestsCountPerStack = 1;
 
         protected override void OnInstall()
         {
-            SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
             base.OnInstall();
+            SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
         }
 
         protected override void OnUninstall()
