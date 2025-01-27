@@ -9,7 +9,7 @@ namespace GSvs.RoR2.Items
     [AssetManipulator]
     public abstract class ElusiveAntlers : ContentManipulator<ElusiveAntlers>
     {
-        [InjectConfig]
+        [InjectConfig(desc = "Limit the potential lifetime of Elusive Antlers pickups to reduce lag")]
         public static readonly bool Installed = true;
 
         [InjectConfig(desc = "Please note that Elusive Antlers pickups will also despawn after one minute if the player is far enough away")]

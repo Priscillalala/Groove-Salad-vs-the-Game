@@ -17,12 +17,12 @@ namespace GSvs.RoR2.Items
     [LanguageOverrides]
     public abstract class SaleStar : ContentManipulator<SaleStar>
     {
-        [InjectConfig]
+        [InjectConfig(desc = "Rework Sale Star to affect random chests instead of the first chest opened (with cool new visuals!)")]
         public static readonly bool Installed = true;
 
         [InjectConfig]
         public static readonly int 
-            AffectedChestsCount = 2,
+            AffectedChestsCount = 1,
             AffectedChestsCountPerStack = 1;
 
         [InitDuringStartup]
