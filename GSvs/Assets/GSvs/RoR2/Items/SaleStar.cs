@@ -26,7 +26,7 @@ namespace GSvs.RoR2.Items
             AffectedChestsCountPerStack = 1;
 
         [InitDuringStartup]
-        private static void Init()
+        static void Init()
         {
             GSvsPlugin.Logger.LogMessage("Init SaleStar!");
             if (Installed)
@@ -40,7 +40,7 @@ namespace GSvs.RoR2.Items
         [HarmonyILManipulator]
         [HarmonyPatch(typeof(InteractionDriver), nameof(InteractionDriver.MyFixedUpdate))]
         [HarmonyPatch(typeof(PurchaseInteraction), nameof(PurchaseInteraction.OnInteractionBegin))]
-        private static void IgnoreSaleStar(ILContext il)
+        static void IgnoreSaleStar(ILContext il)
         {
             ILCursor c = new ILCursor(il);
             c.GotoNext(MoveType.After,
@@ -51,7 +51,7 @@ namespace GSvs.RoR2.Items
             c.Emit(OpCodes.Ldc_I4_0);
         }
 
-        private static void OnPostPopulateSceneServer(SceneDirector sceneDirector)
+        static void OnPostPopulateSceneServer(SceneDirector sceneDirector)
         {
             if (!SceneInfo.instance.countsAsStage && !SceneInfo.instance.sceneDef.allowItemsToSpawnObjects)
             {

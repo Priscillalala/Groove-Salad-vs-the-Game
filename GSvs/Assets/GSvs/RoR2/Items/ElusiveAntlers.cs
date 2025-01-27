@@ -16,7 +16,7 @@ namespace GSvs.RoR2.Items
         public static readonly float MaxPickupLifetime = 90f;
 
         [InitDuringStartup]
-        private static void Init()
+        static void Init()
         {
             if (Installed)
             {
@@ -25,9 +25,7 @@ namespace GSvs.RoR2.Items
         }
 
         [AssetManipulator]
-        private static void SetAntlersPickupDuration(
-            [LoadAsset("RoR2/DLC2/Items/SpeedBoostPickup/ElusiveAntlersPickup.prefab")] GameObject ElusiveAntlersPickup
-            )
+        static void SetPickupDuration([LoadAsset("RoR2/DLC2/Items/SpeedBoostPickup/ElusiveAntlersPickup.prefab")] GameObject ElusiveAntlersPickup)
         {
             Debug.Log($"SetAntlersPickupDuration:");
             if (!ElusiveAntlersPickup.TryGetComponent(out DestroyOnTimer destroyOnTimer))

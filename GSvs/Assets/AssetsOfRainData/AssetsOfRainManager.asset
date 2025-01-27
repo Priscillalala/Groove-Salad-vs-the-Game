@@ -270,5 +270,20 @@ MonoBehaviour:
     - primaryKey: RoR2/Base/Common/ColorRamps/texRampTritone.png
       assemblyQualifiedTypeName: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Junk/ArchWisp/ArchWispFireTrailSegment.prefab
+      assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Common/ColorRamps/texRampGreaterWisp.png
+      assemblyQualifiedTypeName: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Junk/ArchWisp/ArchWispGroundCannon.prefab
+      assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Junk/ArchWisp/ArchWispGroundCannonGhost.prefab
+      assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/GreaterWisp/OmniExplosionVFXGreaterWisp.prefab
+      assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   ignoredShaderDirectories:
   - Hopoo Games/Optimized/Switch/

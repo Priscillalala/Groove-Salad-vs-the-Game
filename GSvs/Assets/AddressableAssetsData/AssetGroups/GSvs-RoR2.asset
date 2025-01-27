@@ -44,6 +44,33 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - ContentPack:GSvs.RoR2
+  - m_GUID: 9451dc98e2ff8674bbeae61ede0e00a4
+    m_Address: GSvs/RoR2/Monsters/GreaterWisp/WispFireTrail.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 657ec5c77845ff34db46e8812328d4fd
+    m_Address: GSvs/RoR2/Monsters/GreaterWisp/WispFireTrailSegment.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 37359412cb42ecb409faf83e55ad8966
+    m_Address: GSvs/RoR2/Monsters/GreaterWisp/matGreaterWispFireStatic.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 6550f1fdf41efc54fbdcd4cde956f7e9
+    m_Address: GSvs/RoR2/Monsters/GreaterWisp/WispGroundCannon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Projectile
+    - NetworkedObject
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 3ef7db7bded909c41bfc0c2fe63fef56
+    m_Address: GSvs/RoR2/Monsters/GreaterWisp/WispGroundCannonGhost.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:
