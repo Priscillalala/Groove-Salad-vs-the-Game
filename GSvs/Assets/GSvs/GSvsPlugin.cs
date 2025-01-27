@@ -1,6 +1,7 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
+using GSvs.Core.Configuration;
 using GSvs.RoR2;
 using HarmonyLib;
 using RoR2;
@@ -51,6 +52,8 @@ namespace GSvs
             var locator = Addressables.LoadContentCatalogAsync(catalogPath).WaitForCompletion();
             Logger.LogMessage("Loaded catalog:");
 
+            InjectConfigAttribute.InjectAll();
+
 #if false
             ElusiveAntlers.enabled = true;
             SaleStar.enabled = true;
@@ -84,15 +87,6 @@ namespace GSvs
                 ConfigFiles.Add(configPath, configFile);
             }
             return configFile;
-        }
-
-        [ConCommand(commandName = "gsvs_reload_config_files")]
-        public static void ReloadConfigFiles(ConCommandArgs conCommandArgs)
-        {
-            foreach (var configFile in ConfigFiles.Values)
-            {
-                configFile.Reload();
-            }
         }
     }
 }

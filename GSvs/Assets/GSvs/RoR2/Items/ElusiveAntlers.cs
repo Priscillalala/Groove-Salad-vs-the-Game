@@ -6,15 +6,23 @@ using UnityEngine;
 
 namespace GSvs.RoR2.Items
 {
-    [ContentManipulator]
-    [Config(section = "Elusive Antlers Adjustment")]
-    public class ElusiveAntlers : ContentManipulator<ElusiveAntlers>
+    [AssetManipulator]
+    public abstract class ElusiveAntlers : NewContentManipulator<ElusiveAntlers>
     {
-        [Config(
-            key = "Max Pickup Lifetime", 
-            description = "Please note that Elusive Antlers pickups will also despawn after one minute if the player is far enough away"
-            )]
-        public static readonly ConfigValue<float> pickupLifetime = 90f;
+        [InjectConfig]
+        public static readonly bool Installed = true;
+
+        [InjectConfig(desc = "Please note that Elusive Antlers pickups will also despawn after one minute if the player is far enough away")]
+        public static readonly float MaxPickupLifetime = 90f;
+
+        [InitDuringStartup]
+        private static void Init()
+        {
+            if (Installed)
+            {
+                DefaultInit();
+            }
+        }
 
         [AssetManipulator]
         private static void SetAntlersPickupDuration(
@@ -26,7 +34,7 @@ namespace GSvs.RoR2.Items
             {
                 destroyOnTimer = ElusiveAntlersPickup.AddComponent<DestroyOnTimer>();
             }
-            destroyOnTimer.duration = pickupLifetime;
+            destroyOnTimer.duration = MaxPickupLifetime;
             Transform AntlerShieldBuffPickupVFX = ElusiveAntlersPickup.transform.Find("AntlerShieldBuffPickupVFX");
             if (AntlerShieldBuffPickupVFX)
             {
@@ -36,7 +44,7 @@ namespace GSvs.RoR2.Items
                 }
                 beginRapidlyActivatingAndDeactivating.enabled = true;
                 beginRapidlyActivatingAndDeactivating.blinkFrequency = 6f;
-                beginRapidlyActivatingAndDeactivating.delayBeforeBeginningBlinking = pickupLifetime - 1f;
+                beginRapidlyActivatingAndDeactivating.delayBeforeBeginningBlinking = MaxPickupLifetime - 1f;
                 beginRapidlyActivatingAndDeactivating.blinkingRootObject = AntlerShieldBuffPickupVFX.gameObject;
             }
         }

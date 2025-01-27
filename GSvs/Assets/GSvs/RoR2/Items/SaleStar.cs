@@ -1,6 +1,6 @@
 using GSvs.Core.Configuration;
-using GSvs.Core.Configuration.Updaters;
 using GSvs.Core.ContentManipulation;
+using GSvs.Core.Language;
 using HarmonyLib;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
@@ -13,28 +13,28 @@ using UnityEngine.Networking;
 
 namespace GSvs.RoR2.Items
 {
-    [ContentManipulator]
-    [Config(section = "Sale Star Rework", updater = typeof(UpdateBetweenRuns))]
     [HarmonyPatch]
-    public class SaleStar : ContentManipulator<SaleStar>
+    [LanguageOverrides]
+    public abstract class SaleStar : NewContentManipulator<SaleStar>
     {
-        [Config(key = "Affected Chests Count")]
-        public static readonly ConfigValue<int> affectedChestsCount = 2;
-        [Config(key = "Affected Chests Count Per Stack")]
-        public static readonly ConfigValue<int> affectedChestsCountPerStack = 1;
+        [InjectConfig]
+        public static readonly bool Installed = true;
 
-        protected override void OnInstall()
-        {
-            GSvsPlugin.Logger.LogMessage("Installed SaleStar!");
-            base.OnInstall();
-            SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
-        }
+        [InjectConfig]
+        public static readonly int 
+            AffectedChestsCount = 2,
+            AffectedChestsCountPerStack = 1;
 
-        protected override void OnUninstall()
+        [InitDuringStartup]
+        private static void Init()
         {
-            GSvsPlugin.Logger.LogMessage("UnInstalled SaleStar!");
-            base.OnUninstall();
-            SceneDirector.onPostPopulateSceneServer -= OnPostPopulateSceneServer;
+            GSvsPlugin.Logger.LogMessage("Init SaleStar!");
+            if (Installed)
+            {
+                GSvsPlugin.Logger.LogMessage("Installed SaleStar!");
+                DefaultInit();
+                SceneDirector.onPostPopulateSceneServer += OnPostPopulateSceneServer;
+            }
         }
 
         [HarmonyILManipulator]
@@ -72,7 +72,7 @@ namespace GSvs.RoR2.Items
             Debug.Log($"P interaction count: {purchaseInteractionInstances.Count}");
             List<PurchaseInteraction> shuffledPurchaseInteractionInstances = new List<PurchaseInteraction>(purchaseInteractionInstances);
             Util.ShuffleList(shuffledPurchaseInteractionInstances, rng);
-            int remainingAffectedChestsCount = affectedChestsCount + (saleStarCount - 1) * affectedChestsCountPerStack;
+            int remainingAffectedChestsCount = AffectedChestsCount + (saleStarCount - 1) * AffectedChestsCountPerStack;
             foreach (PurchaseInteraction purchaseInteraction in shuffledPurchaseInteractionInstances)
             {
                 if (!purchaseInteraction.saleStarCompatible)
@@ -94,7 +94,7 @@ namespace GSvs.RoR2.Items
                 {
                     continue;
                 }
-                
+
                 var attachment = Object.Instantiate(Addressables.LoadAssetAsync<GameObject>("GSvs/RoR2/Items/SaleStar/SaleStarChestAttachment.prefab").WaitForCompletion(), purchaseInteraction.transform.position, Quaternion.identity, purchaseInteraction.transform);
                 attachment.GetComponent<SaleStarChestAttachment>().SetPurchaseInteractionServer(purchaseInteraction);
                 NetworkServer.Spawn(attachment);

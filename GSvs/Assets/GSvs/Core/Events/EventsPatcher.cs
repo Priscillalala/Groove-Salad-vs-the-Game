@@ -4,7 +4,7 @@ namespace GSvs.Core.Events
     {
         private static bool patched;
 
-        protected static void Patch()
+        protected static void PatchAll()
         {
             if (patched)
             {

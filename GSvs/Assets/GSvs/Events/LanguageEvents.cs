@@ -16,7 +16,7 @@ namespace GSvs.Events
         {
             add
             {
-                Patch();
+                PatchAll();
                 collectLanguageOverrideRootFolders += value;
             }
             remove => collectLanguageOverrideRootFolders -= value;

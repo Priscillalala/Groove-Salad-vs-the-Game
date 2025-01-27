@@ -8,11 +8,15 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 namespace GSvs.Core.AssetManipulation
 {
     [JetBrains.Annotations.MeansImplicitUse]
-    [AttributeUsage(AttributeTargets.Method)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AssetManipulatorAttribute : Attribute
     {
         public static AsyncOperationHandle ProcessAsync(Type type)
         {
+            if (!IsDefined(type, typeof(AssetManipulatorAttribute)))
+            {
+                return default;
+            }
             List<AsyncOperationHandle> operations = new List<AsyncOperationHandle>();
             MethodInfo[] methods = type.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
             foreach (var method in methods)

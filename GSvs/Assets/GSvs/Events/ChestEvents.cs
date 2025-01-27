@@ -15,7 +15,7 @@ namespace GSvs.Events
         {
             add
             {
-                Patch();
+                PatchAll();
                 onChestItemDropServer += value;
             }
             remove => onChestItemDropServer -= value;
