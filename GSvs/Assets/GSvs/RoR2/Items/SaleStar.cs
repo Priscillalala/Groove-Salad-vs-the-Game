@@ -1,6 +1,6 @@
+using GSvs.Core;
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
-using GSvs.Core.Language;
 using HarmonyLib;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
@@ -15,7 +15,7 @@ namespace GSvs.RoR2.Items
 {
     [HarmonyPatch]
     [LanguageOverrides]
-    public abstract class SaleStar : NewContentManipulator<SaleStar>
+    public abstract class SaleStar : ContentManipulator<SaleStar>
     {
         [InjectConfig]
         public static readonly bool Installed = true;

@@ -1,8 +1,8 @@
 {
 	"mod": "groovesalad.Groove_Salad_vs_the_Game",
 	"config": [
-		"GSvs.RoR2.Items.SaleStar.affectedChestsCount",
-		"GSvs.RoR2.Items.SaleStar.affectedChestsCountPerStack"
+		"GSvs.RoR2.Items.SaleStar.AffectedChestsCount",
+		"GSvs.RoR2.Items.SaleStar.AffectedChestsCountPerStack"
 	],
 	"strings": {
 		"ITEM_LOWERPRICEDCHESTS_PICKUP": "Some chests contain an extra item.",

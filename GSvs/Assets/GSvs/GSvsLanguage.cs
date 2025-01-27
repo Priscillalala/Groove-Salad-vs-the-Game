@@ -41,20 +41,7 @@ namespace GSvs
                 FieldInfo field = type.GetField(memberName, MEMBER_BINDING_FLAGS);
                 if (field != null)
                 {
-                    if (typeof(IConfigValue).IsAssignableFrom(field.FieldType))
-                    {
-                        IConfigValue configValue = (IConfigValue)field.GetValue(null);
-                        if (configValue != null)
-                        {
-                            args[i] = configValue.BoxedValue;
-                            if (configValue.ValueUpdater != null)
-                            {
-                                configValue.ValueUpdater.OnValueUpdated -= LanguageUtil.ReloadLanguages;
-                                configValue.ValueUpdater.OnValueUpdated += LanguageUtil.ReloadLanguages;
-                            }
-                            continue;
-                        }
-                    }
+                    args[i] = field.GetValue(null);
                 }
             }
             foreach (JSONNode stringNode in stringsNode.Children)

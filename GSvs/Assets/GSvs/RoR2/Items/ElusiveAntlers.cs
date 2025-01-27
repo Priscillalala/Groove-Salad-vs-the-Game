@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GSvs.RoR2.Items
 {
     [AssetManipulator]
-    public abstract class ElusiveAntlers : NewContentManipulator<ElusiveAntlers>
+    public abstract class ElusiveAntlers : ContentManipulator<ElusiveAntlers>
     {
         [InjectConfig]
         public static readonly bool Installed = true;
