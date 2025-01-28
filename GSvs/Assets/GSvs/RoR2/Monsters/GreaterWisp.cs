@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace GSvs.RoR2.Monsters
 {
+    // TODO: fix trail visuals
     [AssetManipulator]
     public abstract class GreaterWisp : ContentManipulator<GreaterWisp>
     {

@@ -30,7 +30,7 @@ namespace GSvs.RoR2.Mechanics
             }
         }
 
-        [HarmonyPrefix, HarmonyPatch(typeof(CombatDirectors), nameof(CombatDirector.Awake))]
+        [HarmonyPrefix, HarmonyPatch(typeof(CombatDirector), nameof(CombatDirector.Awake))]
         static void ApplySpawningMultiplier(CombatDirector __instance)
         {
             if (__instance.GetComponent<DirectorCore>())
