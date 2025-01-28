@@ -59,7 +59,7 @@ namespace GSvs.RoR2.Mechanics
         static void PickMusicTrack(MusicController musicController, ref MusicTrackDef newTrack)
         {
             SceneDef mostRecentSceneDef = SceneCatalog.mostRecentSceneDef;
-            if (mostRecentSceneDef && newTrack == mostRecentSceneDef.bossTrack)
+            if (mostRecentSceneDef && newTrack && newTrack == mostRecentSceneDef.bossTrack)
             {
                 newTrack = overrideBossTrack;
             }

@@ -1,14 +1,8 @@
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
-using HarmonyLib;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using RoR2;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+using System;
 using UnityEngine.AddressableAssets;
-using UnityEngine.Networking;
 
 namespace GSvs.RoR2.Mechanics
 {
@@ -16,6 +10,9 @@ namespace GSvs.RoR2.Mechanics
     {
         [InjectConfig(desc = "All post-loop teleporters can be aligned to the moon")]
         public static readonly bool Installed = true;
+
+        [InjectConfig(desc = "Teleporters on the Path of the Colossus can never be aligned to the moon")]
+        public static readonly bool ExcludeColossusStages = true;
 
         [InitDuringStartup]
         static void Init()
@@ -27,14 +24,35 @@ namespace GSvs.RoR2.Mechanics
             }
         }
 
-        private static void OnPrePopulateSceneServer(SceneDirector sceneDirector)
+        static void OnPrePopulateSceneServer(SceneDirector sceneDirector)
         {
             var iscTeleporterOp = Addressables.LoadAssetAsync<InteractableSpawnCard>("RoR2/Base/Teleporters/iscTeleporter.asset");
             if (Run.instance.loopClearCount > 0 && sceneDirector.teleporterSpawnCard == iscTeleporterOp.WaitForCompletion())
             {
-                sceneDirector.teleporterSpawnCard = Addressables.LoadAssetAsync<InteractableSpawnCard>("GSvs/RoR2/Mechanics/Teleporter/iscDivineTeleporter.asset").WaitForCompletion();
+                TryOverrideTeleporterSpawnCard(sceneDirector);
             }
             Addressables.Release(iscTeleporterOp);
+        }
+
+        public static void TryOverrideTeleporterSpawnCard(SceneDirector sceneDirector)
+        {
+            if (ExcludeColossusStages
+                && sceneDirector.teleporterSpawnCard
+                && sceneDirector.teleporterSpawnCard.prefab 
+                && sceneDirector.teleporterSpawnCard.prefab.TryGetComponent(out TeleporterInteraction teleporterInteraction)
+                )
+            {
+                PortalSpawner colossusPortalSpawner = Array.Find(teleporterInteraction.portalSpawners, x => x.bannedEventFlag == "FalseSonBossComplete");
+                if (colossusPortalSpawner && SceneInfo.instance)
+                {
+                    SceneDef sceneDef = SceneInfo.instance.sceneDef;
+                    if (sceneDef && Array.IndexOf(colossusPortalSpawner.validStages, sceneDef.baseSceneName) >= 0)
+                    {
+                        return;
+                    }
+                }
+            }
+            sceneDirector.teleporterSpawnCard = Addressables.LoadAssetAsync<InteractableSpawnCard>("GSvs/RoR2/Mechanics/Teleporter/iscDivineTeleporter.asset").WaitForCompletion();
         }
     }
 }
