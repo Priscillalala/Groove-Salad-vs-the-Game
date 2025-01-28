@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3c1c590adb909a94baec636bdb91e9f7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: RoR2/Base/Teleporters/Teleporter1.prefab
+    assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  results: []
+  bundleDependencies: []

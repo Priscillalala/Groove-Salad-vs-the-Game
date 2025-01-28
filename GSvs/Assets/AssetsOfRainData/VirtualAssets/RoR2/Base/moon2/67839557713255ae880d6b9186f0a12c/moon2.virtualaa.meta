@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cd4e0258d51b4704b83a66d06d26561d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9b78e97eed011314db6cc98d5848c724, type: 3}
+  request:
+    primaryKey: RoR2/Base/moon2/moon2.asset
+    assemblyQualifiedTypeName: RoR2.SceneDef, RoR2, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  results: []
+  bundleDependencies: []

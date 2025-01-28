@@ -285,5 +285,17 @@ MonoBehaviour:
     - primaryKey: RoR2/Base/GreaterWisp/OmniExplosionVFXGreaterWisp.prefab
       assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Teleporters/LunarTeleporterProngs.prefab
+      assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Teleporters/matTeleporterClean.mat
+      assemblyQualifiedTypeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/Teleporters/Teleporter1.prefab
+      assemblyQualifiedTypeName: UnityEngine.GameObject, UnityEngine.CoreModule,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - primaryKey: RoR2/Base/moon2/moon2.asset
+      assemblyQualifiedTypeName: RoR2.SceneDef, RoR2, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
   ignoredShaderDirectories:
   - Hopoo Games/Optimized/Switch/

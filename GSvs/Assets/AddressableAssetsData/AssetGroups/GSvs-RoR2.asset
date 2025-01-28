@@ -71,6 +71,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - ContentPack:GSvs.RoR2
+  - m_GUID: d8ed35955f16c9e4bb9b3c6b8c976f2b
+    m_Address: GSvs/RoR2/Mechanics/Teleporter/DivineTeleporterProngs Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - NetworkedObject
+    - ContentPack:GSvs.RoR2
+  - m_GUID: 928fc82a8d997724fa3ab0f01b7e7894
+    m_Address: GSvs/RoR2/Mechanics/Teleporter/DivineTeleporter Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - NetworkedObject
+    - ContentPack:GSvs.RoR2
+  - m_GUID: ca0d0d40dfb2a4840b2a5b04c0265ceb
+    m_Address: GSvs/RoR2/Mechanics/Teleporter/iscDivineTeleporter.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:
