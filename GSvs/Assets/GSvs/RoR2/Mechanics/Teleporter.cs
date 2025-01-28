@@ -12,7 +12,6 @@ using UnityEngine.Networking;
 
 namespace GSvs.RoR2.Mechanics
 {
-    // TODO: custom teleporter prefab
     public abstract class Teleporter : ContentManipulator<Teleporter>
     {
         [InjectConfig(desc = "All post-loop teleporters can be aligned to the moon")]
@@ -31,7 +30,7 @@ namespace GSvs.RoR2.Mechanics
         private static void OnPrePopulateSceneServer(SceneDirector sceneDirector)
         {
             var iscTeleporterOp = Addressables.LoadAssetAsync<InteractableSpawnCard>("RoR2/Base/Teleporters/iscTeleporter.asset");
-            if (Run.instance.loopClearCount >= 0 && sceneDirector.teleporterSpawnCard == iscTeleporterOp.WaitForCompletion())
+            if (Run.instance.loopClearCount > 0 && sceneDirector.teleporterSpawnCard == iscTeleporterOp.WaitForCompletion())
             {
                 sceneDirector.teleporterSpawnCard = Addressables.LoadAssetAsync<InteractableSpawnCard>("GSvs/RoR2/Mechanics/Teleporter/iscDivineTeleporter.asset").WaitForCompletion();
             }
