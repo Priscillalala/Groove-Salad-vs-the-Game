@@ -16,18 +16,26 @@ namespace GSvs.RoR2.Mechanics
     [HarmonyPatch]
     public abstract class Bleed : ContentManipulator<Bleed>
     {
-        [InjectConfig(desc = "Bleed deals TOTAL damage instead of base damage. Affects Tri-Tip Dagger and Shatterspleen")]
+        [InjectConfig(desc = "Bleed deals TOTAL damage instead of base damage. Affects Tri-Tip Dagger, Shatterspleen, and Noxious Thorn")]
         public static readonly bool Installed = true;
+
+        [InjectConfig]
+        public static readonly float TotalDamageCoefficient = 1.2f;
+
+        [InjectConfig(desc = "Bleed duration at 100% damage. Higher damage attacks bleed for longer")]
+        public static readonly float BaseDuration = 2f;
+
+        private static float compensatedDamageMultiplier;
 
         [SystemInitializer(typeof(DotController))]
         static void Init()
         {
             if (Installed)
             {
-                DefaultInit();
                 var bleedDef = DotController.GetDotDef(DotController.DotIndex.Bleed);
-                bleedDef.interval = .333f;
-                bleedDef.damageCoefficient = .1f;
+                float idealDamageCoefficient = TotalDamageCoefficient / BaseDuration * bleedDef.interval;
+                compensatedDamageMultiplier = idealDamageCoefficient / bleedDef.damageCoefficient;
+                DefaultInit();
             }
         }
 
@@ -57,11 +65,17 @@ namespace GSvs.RoR2.Mechanics
             c.Emit(OpCodes.Ldloc, locAttackerBodyIndex);
             c.EmitDelegate<Func<DamageInfo, CharacterBody, float>>((DamageInfo damageInfo, CharacterBody attackerBody) =>
             {
-                float totalDamageCoefficient = Util.OnHitProcDamage(damageInfo.damage, attackerBody.damage, 1.2f) / attackerBody.damage;
-                var bleedDef = DotController.GetDotDef(DotController.DotIndex.Bleed);
-                return Mathf.Sqrt(totalDamageCoefficient * bleedDef.interval / bleedDef.damageCoefficient);
+                float procDamage = Util.OnHitProcDamage(damageInfo.damage, attackerBody.damage, TotalDamageCoefficient);
+                float procDamageCoefficient = procDamage / attackerBody.damage;
+                float bleedMult = Mathf.Sqrt(procDamageCoefficient / TotalDamageCoefficient);
+                return BaseDuration * bleedMult;
             });
             c.Emit(OpCodes.Dup);
+            c.EmitDelegate<Func<float, float>>(duration =>
+            {
+                float bleedMult = duration / BaseDuration;
+                return compensatedDamageMultiplier * bleedMult;
+            });
         }
 
         [HarmonyILManipulator, HarmonyPatch(typeof(DotController), nameof(DotController.AddDot))]
