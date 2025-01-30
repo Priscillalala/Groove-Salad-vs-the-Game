@@ -17,7 +17,8 @@
         "Mono.Cecil.dll",
         "MonoMod.Utils.dll",
         "0Harmony.dll",
-        "SimpleJSON.dll"
+        "SimpleJSON.dll",
+        "HGUnityUtils.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
