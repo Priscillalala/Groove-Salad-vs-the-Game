@@ -5,7 +5,7 @@
 		"GSvs.RoR2.Items.SaleStar.AffectedChestsCountPerStack"
 	],
 	"strings": {
-		"ITEM_LOWERPRICEDCHESTS_PICKUP": "Some chests contain an extra item.",
+		"ITEM_LOWERPRICEDCHESTS_PICKUP": "Some chests contain more than one reward.",
 		"ITEM_LOWERPRICEDCHESTS_DESC": "Each stage, <style=cIsUtility>{0}</style> <style=cStack>(+{1} per stack)</style> chests contain <style=cIsUtility>an extra item</style>."
 	}
 }
