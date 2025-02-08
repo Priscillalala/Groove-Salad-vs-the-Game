@@ -20,7 +20,7 @@ namespace GSvs.RoR2.Mechanics
         public static readonly bool Installed = true;
 
         [InjectConfig]
-        public static readonly float TotalDamageCoefficient = 1.2f;
+        public static readonly Percent TotalDamageCoefficient = 1.2f;
 
         [InjectConfig(desc = "Bleed duration at 100% damage. Higher damage attacks bleed for longer")]
         public static readonly float BaseDuration = 2f;
