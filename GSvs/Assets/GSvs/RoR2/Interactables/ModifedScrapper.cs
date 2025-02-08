@@ -1,6 +1,5 @@
 using RoR2;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace GSvs.RoR2.Interactables
@@ -34,35 +33,28 @@ namespace GSvs.RoR2.Interactables
                 return;
             }
             Inventory inventory = interactorBody.inventory;
-            if (!inventory)
+            if (!inventory || !inventory.TryGetComponent(out ScrapperInventory scrapperInventory))
             {
                 return;
             }
-            if (!inventory.TryGetComponent(out InventoryScrapperOptions scrapperOptions))
+            List<PickupPickerController.Option> options = new List<PickupPickerController.Option>();
+            foreach (ItemIndex itemIndex in inventory.itemAcquisitionOrder)
             {
-                scrapperOptions = inventory.gameObject.AddComponent<InventoryScrapperOptions>();
-            }
-            Xoroshiro128Plus selectionRng = scrapperOptions.GetSelectionRng();
-            var itemDefsByTier = ItemCatalog.allItemDefs.GroupBy(x => x.tier);
-            List<ItemDef> allScrappableItemDefs = new List<ItemDef>();
-            foreach (var group in itemDefsByTier)
-            {
-                ItemTierDef itemTierDef = ItemTierCatalog.GetItemTierDef(group.Key);
-                if (!itemTierDef || itemTierDef.canScrap)
+                if (!scrapperInventory.collectedItemCounts.ContainsKey(itemIndex))
                 {
-                    allScrappableItemDefs.AddRange(group.Where(x => x.canRemove && !x.hidden && x.DoesNotContainTag(ItemTag.Scrap)));
+                    continue;
+                }
+                ItemDef itemDef = ItemCatalog.GetItemDef(itemIndex);
+                ItemTierDef itemTierDef = ItemTierCatalog.GetItemTierDef(itemDef.tier);
+                if ((!itemTierDef || itemTierDef.canScrap) && itemDef.canRemove && !itemDef.hidden && itemDef.DoesNotContainTag(ItemTag.Scrap))
+                {
+                    options.Add(new PickupPickerController.Option
+                    {
+                        pickupIndex = PickupCatalog.FindPickupIndex(itemIndex),
+                        available = true,
+                    });
                 }
             }
-            Util.ShuffleList(allScrappableItemDefs, selectionRng);
-            int optionsCount = Mathf.Min(3, inventory.itemAcquisitionOrder.Count);
-            var options = allScrappableItemDefs
-                .Where(x => inventory.GetItemCount(x) > 0)
-                .Take(optionsCount)
-                .Select(x => new PickupPickerController.Option
-                {
-                    pickupIndex = PickupCatalog.FindPickupIndex(x.itemIndex),
-                    available = true,
-                });
             pickupPickerController.SetOptionsServer(options.ToArray());
         }
     }
