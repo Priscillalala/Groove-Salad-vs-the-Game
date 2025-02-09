@@ -40,7 +40,7 @@ namespace GSvs.RoR2.Mechanics
                 ))
             {
                 GSvsPlugin.Logger.LogWarning("Set linear scaling mult");
-                c.Next.Operand = 0.06f;
+                c.Next.Operand = 0.07f;
             }
             c.Index = 0;
             while (c.TryGotoNext(MoveType.Before,
@@ -55,7 +55,7 @@ namespace GSvs.RoR2.Mechanics
                 c.Next.Operand = 1.1f;
                 c.Index += 5;
                 c.Emit(OpCodes.Ldarg_0);
-                c.EmitDelegate<Func<Run, float>>(run => Mathf.Pow(1.35f, run.loopClearCount));
+                c.EmitDelegate<Func<Run, float>>(run => Mathf.Pow(1.3f, run.loopClearCount));
                 c.Emit(OpCodes.Mul);
             }
         }
@@ -66,7 +66,7 @@ namespace GSvs.RoR2.Mechanics
             ILCursor c = new ILCursor(il);
             c.GotoNext(MoveType.After, x => x.MatchCallOrCallvirt<Mathf>(nameof(Mathf.Pow)));
             c.Emit(OpCodes.Ldarg_0);
-            c.EmitDelegate<Func<Run, float>>(run => Mathf.Pow(1.35f, run.loopClearCount));
+            c.EmitDelegate<Func<Run, float>>(run => Mathf.Pow(1.3f, run.loopClearCount));
             c.Emit(OpCodes.Mul);
         }
     }

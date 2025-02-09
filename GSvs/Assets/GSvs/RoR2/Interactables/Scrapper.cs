@@ -19,6 +19,14 @@ namespace GSvs.RoR2.Interactables
         [InjectConfig(desc = "Scrappers only include items collected on the current stage")]
         public static readonly bool Installed = true;
 
+        [InjectConfig]
+        public static readonly float SelectionWeightMultiplier = 1.5f;
+
+        [InjectConfig(desc = "-1 is infinite")]
+        public static readonly int MaxSpawnsPerStage = 2;
+
+        private static InteractableSpawnCard cachedIscScrapper;
+
         [InitDuringStartup]
         static void Init()
         {
@@ -26,6 +34,7 @@ namespace GSvs.RoR2.Interactables
             {
                 DefaultInit();
                 Inventory.onServerItemGiven += OnServerItemGiven;
+                DirectorCardCategorySelection.calcCardWeight += CalcCardWeight;
             }
         }
 
@@ -41,10 +50,25 @@ namespace GSvs.RoR2.Interactables
             }
         }
 
+        static void CalcCardWeight(DirectorCard card, ref float weight)
+        {
+            if (card.spawnCard && card.spawnCard == cachedIscScrapper)
+            {
+                weight *= SelectionWeightMultiplier;
+            }
+        }
+
         [AssetManipulator]
         static void ModifyScrapper([LoadAsset("RoR2/Base/Scrapper/Scrapper.prefab")] GameObject Scrapper)
         {
             Scrapper.AddComponent<ModifedScrapper>();
+        }
+
+        [AssetManipulator]
+        static void ModifyScrapperSpawnCard([LoadAsset("RoR2/Base/Scrapper/iscScrapper.asset")] InteractableSpawnCard iscScrapper)
+        {
+            iscScrapper.maxSpawnsPerStage = MaxSpawnsPerStage;
+            cachedIscScrapper = iscScrapper;
         }
 
         [HarmonyILManipulator, HarmonyPatch(typeof(ScrapperController), nameof(ScrapperController.BeginScrapping))]
