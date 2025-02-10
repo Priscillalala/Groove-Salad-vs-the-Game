@@ -1,6 +1,7 @@
 using GSvs.Core;
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
+using GSvs.Core.Util;
 using HarmonyLib;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
@@ -72,7 +73,7 @@ namespace GSvs.RoR2.Items
             Debug.Log($"P interaction count: {purchaseInteractionInstances.Count}");
             List<PurchaseInteraction> shuffledPurchaseInteractionInstances = new List<PurchaseInteraction>(purchaseInteractionInstances);
             Util.ShuffleList(shuffledPurchaseInteractionInstances, rng);
-            int remainingAffectedChestsCount = AffectedChestsCount + (saleStarCount - 1) * AffectedChestsCountPerStack;
+            int remainingAffectedChestsCount = StackUtil.Scale(AffectedChestsCount, AffectedChestsCountPerStack, saleStarCount);
             foreach (PurchaseInteraction purchaseInteraction in shuffledPurchaseInteractionInstances)
             {
                 if (!purchaseInteraction.saleStarCompatible)
