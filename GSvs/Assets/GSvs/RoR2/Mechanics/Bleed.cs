@@ -29,15 +29,23 @@ namespace GSvs.RoR2.Mechanics
 
         private static float compensatedDamageMultiplier;
 
-        [SystemInitializer(typeof(DotController))]
+        [InitDuringStartup]
         static void Init()
+        {
+            if (Installed)
+            {
+                DefaultInit();
+            }
+        } 
+
+        [SystemInitializer(typeof(DotController))]
+        static void InitAfterDotController()
         {
             if (Installed)
             {
                 var bleedDef = DotController.GetDotDef(DotController.DotIndex.Bleed);
                 float idealDamageCoefficient = TotalDamageCoefficient / BaseDuration * bleedDef.interval;
                 compensatedDamageMultiplier = idealDamageCoefficient / bleedDef.damageCoefficient;
-                DefaultInit();
             }
         }
 
