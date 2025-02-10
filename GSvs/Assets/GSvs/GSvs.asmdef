@@ -18,7 +18,9 @@
         "MonoMod.Utils.dll",
         "0Harmony.dll",
         "SimpleJSON.dll",
-        "HGUnityUtils.dll"
+        "HGUnityUtils.dll",
+        "AK.Wwise.Unity.API.dll",
+        "AK.Wwise.Unity.API.WwiseTypes.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
