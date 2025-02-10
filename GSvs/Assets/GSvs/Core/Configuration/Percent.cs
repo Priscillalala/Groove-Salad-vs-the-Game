@@ -4,13 +4,12 @@ using System.Globalization;
 
 namespace GSvs.Core.Configuration
 {
-    public readonly struct Percent : IComparable<float>, IEquatable<float>, IFormattable
+    public readonly struct Percent : IEquatable<Percent>, IFormattable
     {
-        public static readonly NumberFormatInfo defaultFormatInfo = new NumberFormatInfo
+        private static readonly NumberFormatInfo invariantFormatProvider = new NumberFormatInfo
         {
             PercentPositivePattern = 1,
             PercentNegativePattern = 1,
-            PercentDecimalDigits = 0
         };
 
         static Percent()
@@ -22,8 +21,6 @@ namespace GSvs.Core.Configuration
             });
         }
 
-        const string PERCENT_FORMAT = "p";
-
         public float Value { get; }
 
         public Percent(float value)
@@ -31,38 +28,14 @@ namespace GSvs.Core.Configuration
             Value = value;
         }
 
-        public int CompareTo(float other)
+        public bool Equals(Percent other)
         {
-            return Value.CompareTo(other);
-        }
-
-        public bool Equals(float other)
-        {
-            return Value.Equals(other);
-        }
-
-        public string ToString(string format, IFormatProvider formatProvider)
-        {
-            return Value.ToString(PERCENT_FORMAT, formatProvider);
-        }
-
-        public string ToString(IFormatProvider formatProvider)
-        {
-            return Value.ToString(PERCENT_FORMAT, formatProvider);
-        }
-
-        public override string ToString()
-        {
-            return Value.ToString(PERCENT_FORMAT, defaultFormatInfo);
+            return Value == other.Value;
         }
 
         public override bool Equals(object obj)
         {
-            if (obj is Percent percent)
-            {
-                return Value == percent.Value;
-            }
-            if (obj is float other)
+            if (obj is Percent other)
             {
                 return Equals(other);
             }
@@ -74,16 +47,50 @@ namespace GSvs.Core.Configuration
             return Value.GetHashCode();
         }
 
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            if (string.IsNullOrEmpty(format))
+            {
+                return ToPercentString(formatProvider);
+            }
+            return Value.ToString(format, formatProvider);
+        }
+
+        public string ToString(IFormatProvider formatProvider)
+        {
+            return ToPercentString(formatProvider);
+        }
+
+        public override string ToString()
+        {
+            return ToPercentString(invariantFormatProvider);
+        }
+
+        private string ToPercentString(IFormatProvider formatProvider)
+        {
+            string percentString = Value.ToString("p99", formatProvider);
+            int endIndex = percentString.LastIndexOf('0');
+            int startIndex = endIndex;
+            while (startIndex > 0 && percentString[startIndex - 1] == '0')
+            {
+                startIndex--;
+            }
+            while (startIndex > 0 && !char.IsDigit(percentString[startIndex - 1]))
+            {
+                startIndex--;
+            }
+            return percentString.Remove(startIndex, endIndex - startIndex + 1);
+        }
+
         public static Percent Parse(string str)
         {
-            string percentSymbol = defaultFormatInfo.PercentSymbol;
-            int index = str.IndexOf(percentSymbol);
-            if (index < 0)
+            string percentSymbol = invariantFormatProvider.PercentSymbol;
+            int percentIndex = str.IndexOf(percentSymbol);
+            if (percentIndex < 0)
             {
-                return new Percent(float.Parse(str, defaultFormatInfo));
+                return new Percent(float.Parse(str, invariantFormatProvider));
             }
-            str = str.Remove(index, percentSymbol.Length);
-            return new Percent(float.Parse(str, defaultFormatInfo) / 100f);
+            return new Percent(float.Parse(str.Remove(percentIndex, percentSymbol.Length), invariantFormatProvider) / 100f);
         }
 
         public static implicit operator Percent(float value)
