@@ -1,3 +1,4 @@
+using GSvs.Core;
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
 using HarmonyLib;
@@ -14,6 +15,7 @@ using UnityEngine.Networking;
 namespace GSvs.RoR2.Mechanics
 {
     [HarmonyPatch]
+    [LanguageOverrides]
     public abstract class Bleed : ContentManipulator<Bleed>
     {
         [InjectConfig(desc = "Bleed deals TOTAL damage instead of base damage. Affects Tri-Tip Dagger, Shatterspleen, and Noxious Thorn")]
