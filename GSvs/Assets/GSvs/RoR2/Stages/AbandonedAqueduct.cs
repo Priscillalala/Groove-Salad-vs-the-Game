@@ -24,11 +24,15 @@ namespace GSvs.RoR2.Stages
 
         [AssetManipulator]
         static void ModifyMonstersSelection(
+            [LoadAsset("RoR2/Base/goolake/dccsGooLakeMonsters.asset")] DirectorCardCategorySelection dccsGooLakeMonsters,
+            [LoadAsset("RoR2/Base/goolake/dccsGooLakeMonstersDLC1.asset")] DirectorCardCategorySelection dccsGooLakeMonstersDLC1,
             [LoadAsset("RoR2/DLC2/dccsGooLakeMonstersDLC2.asset")] DirectorCardCategorySelection dccsGooLakeMonstersDLC2,
             [LoadAsset("RoR2/DLC2/dccsGooLakeMonstersDLC2Only.asset")] DirectorCardCategorySelection dccsGooLakeMonstersDLC2Only,
             [LoadAsset("RoR2/DLC2/Child/cscChild.asset")] CharacterSpawnCard cscChild
             )
         {
+            ModifyDccs(dccsGooLakeMonsters);
+            ModifyDccs(dccsGooLakeMonstersDLC1);
             ModifyDccs(dccsGooLakeMonstersDLC2);
             ModifyDccs(dccsGooLakeMonstersDLC2Only);
 

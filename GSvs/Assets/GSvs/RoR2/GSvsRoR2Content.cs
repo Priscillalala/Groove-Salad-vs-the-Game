@@ -1,3 +1,4 @@
+using RoR2;
 using RoR2.ContentManagement;
 using System.Collections;
 
@@ -5,6 +6,12 @@ namespace GSvs.RoR2
 {
     public class GSvsRoR2Content : IContentPackProvider
     {
+        public static class Items
+        {
+            [TargetAssetName("GSvsBoostSpeed")]
+            public static ItemDef BoostSpeed;
+        }
+
         public const string ADDRESSABLES_LABEL = "ContentPack:GSvs.RoR2";
 
         private readonly ContentPack contentPack = new ContentPack();
@@ -16,6 +23,10 @@ namespace GSvs.RoR2
             contentPack.identifier = identifier;
             AddressablesLoadHelper loadHelper = AddressablesLoadHelper.CreateUsingDefaultResourceLocator(ADDRESSABLES_LABEL);
             yield return loadHelper.AddContentPackLoadOperationWithYields(contentPack);
+            loadHelper.AddGenericOperation(delegate
+            {
+                ContentLoadHelper.PopulateTypeFields(typeof(Items), contentPack.itemDefs);
+            }, 0.05f);
             while (loadHelper.coroutine.MoveNext())
             {
                 args.ReportProgress(loadHelper.progress.value);
