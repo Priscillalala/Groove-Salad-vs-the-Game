@@ -4,7 +4,7 @@ using BepInEx.Logging;
 using GSvs.Core.Configuration;
 using GSvs.RoR2;
 using HarmonyLib;
-using RoR2;
+using R2API;
 using RoR2.ContentManagement;
 using System.Collections.Generic;
 using System.Security;
@@ -22,6 +22,7 @@ using SearchableAttribute = HG.Reflection.SearchableAttribute;
 namespace GSvs
 {
     [BepInPlugin(GUID, NAME, VERSION)]
+    [BepInDependency(RecalculateStatsAPI.PluginGUID)]
     public class GSvsPlugin : BaseUnityPlugin
     {
         public const string

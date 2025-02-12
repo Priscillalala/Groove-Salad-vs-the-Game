@@ -167,6 +167,36 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "riskofthunder-hookgenpatcher": {
+      "version": "file:HookGenPatcher",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_addressables": {
+      "version": "file:R2API_Addressables",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_core": {
+      "version": "file:R2API_Core",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_director": {
+      "version": "file:R2API_Director",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_recalculatestats": {
+      "version": "file:R2API_RecalculateStats",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofthunder-ror2editorkit": {
       "version": "https://github.com/risk-of-thunder/RoR2EditorKit.git#5.4.0",
       "depth": 0,

@@ -20,7 +20,8 @@
         "SimpleJSON.dll",
         "HGUnityUtils.dll",
         "AK.Wwise.Unity.API.dll",
-        "AK.Wwise.Unity.API.WwiseTypes.dll"
+        "AK.Wwise.Unity.API.WwiseTypes.dll",
+        "R2API.RecalculateStats.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
