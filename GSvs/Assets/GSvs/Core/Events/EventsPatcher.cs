@@ -2,16 +2,16 @@ namespace GSvs.Core.Events
 {
     public abstract class EventsPatcher<This> where This : EventsPatcher<This>
     {
-        private static bool patched;
+        public static bool Patched { get; private set; }
 
         protected static void PatchAll()
         {
-            if (patched)
+            if (Patched)
             {
                 return;
             }
             GSvsPlugin.Harmony.PatchAll(typeof(This));
-            patched = true;
+            Patched = true;
         }
     }
 }
