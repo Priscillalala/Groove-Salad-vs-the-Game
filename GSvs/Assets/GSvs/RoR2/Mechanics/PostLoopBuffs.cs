@@ -1,6 +1,7 @@
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
 using RoR2;
+using UnityEngine;
 
 namespace GSvs.RoR2.Mechanics
 {
@@ -29,7 +30,8 @@ namespace GSvs.RoR2.Mechanics
                 )
             {
                 float adaptiveArmorPerHpPercent = damageReport.victimIsChampion ? 4f : 2f;
-                damageReport.victim.adaptiveArmorValue += damageReport.damageDealt / damageReport.victim.fullCombinedHealth * 100f * adaptiveArmorPerHpPercent;
+                float adaptiveArmorValue = damageReport.damageDealt / damageReport.victim.fullCombinedHealth * 100f * adaptiveArmorPerHpPercent;
+                damageReport.victim.adaptiveArmorValue = Mathf.Min(damageReport.victim.adaptiveArmorValue + adaptiveArmorValue, 400f);
             }
         }
     }
