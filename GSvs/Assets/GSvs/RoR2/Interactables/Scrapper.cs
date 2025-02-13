@@ -1,3 +1,4 @@
+using GSvs.Core;
 using GSvs.Core.AssetManipulation;
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
@@ -13,6 +14,7 @@ using UnityEngine;
 namespace GSvs.RoR2.Interactables
 {
     [AssetManipulator]
+    [LanguageOverrides]
     [HarmonyPatch]
     public abstract class Scrapper : ContentManipulator<Scrapper>
     {
