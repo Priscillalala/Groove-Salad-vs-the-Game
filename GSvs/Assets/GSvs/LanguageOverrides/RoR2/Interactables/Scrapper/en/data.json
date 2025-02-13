@@ -1,0 +1,7 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"strings": {
+		"SCRAPPER_POPUP_TEXT": "<b>Scrapper V1-5</b>\n<i><style=cSub><size=75%>Turn anything* into recyclable scrap!</size></style></i>\n<i><style=cSub><size=50%>*Only accepting mint or near-mint condition items at this time.</size></style></i>",
+		"SCRAPPER_DESCRIPTION": "Allows survivors to sacrifice items in exchange for pieces of scrap the same rarity as the sacrificed item. Only accepts items collected from the current stage."
+	}
+}

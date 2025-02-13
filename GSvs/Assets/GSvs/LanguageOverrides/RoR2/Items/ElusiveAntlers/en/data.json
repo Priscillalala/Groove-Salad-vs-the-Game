@@ -1,0 +1,6 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"strings": {
+		"ITEM_SPEEDBOOSTPICKUP_DESC": "Increases <style=cIsUtility>movement speed</style> by <style=cIsUtility>7%</style>. Spawns orbs of energy nearby every <style=cIsUtility>10s</style> <style=cStack>(-10% per stack)</style>, giving <style=cIsUtility>+12% movement speed</style> up to <style=cIsUtility>3</style> <style=cStack>(+1 per stack)</style> <style=cIsUtility>times</style> for <style=cIsUtility>12s</style>."
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"config": [
+		"GSvs.RoR2.Items.EnergyDrink.SprintSpeedIncrease",
+		"GSvs.RoR2.Items.EnergyDrink.SprintSpeedIncreasePerStack"
+	],
+	"strings": {
+		"ITEM_SPRINTBONUS_PICKUP": "Increase sprint speed.",
+		"ITEM_SPRINTBONUS_DESC": "<style=cIsUtility>Sprint speed</style> is improved by <style=cIsUtility>{0}</style> <style=cStack>(+{1} per stack)</style>."
+	}
+}

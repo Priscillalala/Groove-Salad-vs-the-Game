@@ -1,0 +1,10 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"config": [
+		"GSvs.RoR2.Items.MonsterTooth.Healing",
+		"GSvs.RoR2.Items.MonsterTooth.HealingPerStack"
+	],
+	"strings": {
+		"ITEM_TOOTH_DESC": "Killing an enemy spawns a <style=cIsHealing>healing orb</style> that heals for <style=cIsHealing>{0} <style=cStack>(+{1} per stack)</style> health</style>."
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"config": [
+		"GSvs.RoR2.Items.Medkit.Healing",
+		"GSvs.RoR2.Items.Medkit.HealingPerStack"
+	],
+	"strings": {
+		"ITEM_MEDKIT_DESC": "2 seconds after getting hurt, <style=cIsHealing>heal</style> for <style=cIsHealing>{0} <style=cStack>(+{1} per stack)</style> health</style>."
+	}
+}

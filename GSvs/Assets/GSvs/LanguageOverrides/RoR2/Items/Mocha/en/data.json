@@ -1,0 +1,10 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"config": [
+		"GSvs.RoR2.Items.Mocha.MovementSpeedIncrease",
+		"GSvs.RoR2.Items.Mocha.MovementSpeedIncreasePerStack"
+	],
+	"strings": {
+		"ITEM_ATTACKSPEEDANDMOVESPEED_DESC": "Increases <style=cIsDamage>attack speed</style> by <style=cIsDamage>7.5%</style> <style=cStack>(+7.5% per stack)</style> and <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}</style> <style=cStack>(+{1} per stack)</style>."
+	}
+}
