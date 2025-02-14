@@ -1,4 +1,5 @@
 using GSvs.Core;
+using GSvs.Core.AssetManipulation;
 using GSvs.Core.Configuration;
 using GSvs.Core.ContentManipulation;
 using GSvs.Core.Util;
@@ -12,6 +13,7 @@ namespace GSvs.RoR2.Items
 {
     [HarmonyPatch]
     [LanguageOverrides]
+    [AssetManipulator]
     public abstract class DelicateWatch : ContentManipulator<DelicateWatch>
     {
         [InjectConfig(desc = "Rework Delicate Watch")]
@@ -71,6 +73,12 @@ namespace GSvs.RoR2.Items
                 );
             c.Emit(OpCodes.Pop);
             c.Emit(OpCodes.Ldc_I4_0);
+        }
+
+        [AssetManipulator]
+        static void UpdateItemTags([LoadAsset("RoR2/DLC1/FragileDamageBonus/FragileDamageBonus.asset")] ItemDef FragileDamageBonus)
+        {
+            FragileDamageBonus.tags = new[] { ItemTag.Damage };
         }
     }
 }
