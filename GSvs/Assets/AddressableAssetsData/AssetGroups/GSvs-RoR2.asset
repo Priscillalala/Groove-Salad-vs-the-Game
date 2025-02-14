@@ -100,6 +100,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - BuffDef
     - ContentPack:GSvs.RoR2
+  - m_GUID: e374dcf1741a3bd418f64cb1a072bc75
+    m_Address: GSvs/RoR2/Items/DelicateWatch/texDelicateWatchBonusIcon.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:
