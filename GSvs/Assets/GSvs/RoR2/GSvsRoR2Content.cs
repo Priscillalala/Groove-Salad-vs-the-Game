@@ -12,6 +12,11 @@ namespace GSvs.RoR2
             public static ItemDef BoostSpeed;
         }
 
+        public static class Buffs
+        {
+            public static BuffDef DelicateWatchBonus;
+        }
+
         public const string ADDRESSABLES_LABEL = "ContentPack:GSvs.RoR2";
 
         private readonly ContentPack contentPack = new ContentPack();
@@ -26,6 +31,7 @@ namespace GSvs.RoR2
             loadHelper.AddGenericOperation(delegate
             {
                 ContentLoadHelper.PopulateTypeFields(typeof(Items), contentPack.itemDefs);
+                ContentLoadHelper.PopulateTypeFields(typeof(Buffs), contentPack.buffDefs);
             }, 0.05f);
             while (loadHelper.coroutine.MoveNext())
             {

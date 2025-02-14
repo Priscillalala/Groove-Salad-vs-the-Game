@@ -94,6 +94,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - ItemDef
     - ContentPack:GSvs.RoR2
+  - m_GUID: f30a70d6cd0b703489587cc789641157
+    m_Address: GSvs/RoR2/Items/DelicateWatch/DelicateWatchBonus.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDef
+    - ContentPack:GSvs.RoR2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6603b7bc3fe1ced4c8aa41416de1fad6, type: 2}
   m_SchemaSet:
