@@ -39,8 +39,9 @@ namespace GSvs.RoR2.Items
             c.GotoNext(MoveType.Before,
                 x => x.MatchLdarg(0),
                 x => x.MatchLdflda<HealthComponent>(nameof(HealthComponent.itemCounts)),
-                x => x.MatchLdflda<HealthComponent.ItemCounts>(nameof(HealthComponent.ItemCounts.increaseHealing))
+                x => x.MatchLdfld<HealthComponent.ItemCounts>(nameof(HealthComponent.ItemCounts.increaseHealing))
                 );
+            c.MoveAfterLabels();
             c.Emit(OpCodes.Ldarg_0);
             c.Emit(OpCodes.Ldarg_1);
             c.Emit(OpCodes.Ldarg_3);
@@ -60,7 +61,7 @@ namespace GSvs.RoR2.Items
                 }
                 return amount;
             });
-            c.Emit(OpCodes.Starg_S, 1);
+            c.Emit(OpCodes.Starg_S, (byte)1);
         }
     }
 }
