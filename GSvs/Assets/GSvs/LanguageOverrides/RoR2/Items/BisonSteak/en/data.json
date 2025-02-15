@@ -1,0 +1,11 @@
+{
+	"mod": "groovesalad.Groove_Salad_vs_the_Game",
+	"config": [
+		"GSvs.RoR2.Items.BisonSteak.HealingIncrease",
+		"GSvs.RoR2.Items.BisonSteak.HealingIncreasePerStack"
+	],
+	"strings": {
+		"ITEM_FLATHEALTH_PICKUP": "Gain 25 max health and increase the strength of healing.",
+		"ITEM_FLATHEALTH_DESC": "Increases <style=cIsHealing>maximum health</style> by <style=cIsHealing>25</style> <style=cStack>(+25 per stack)</style>. <style=cIsHealing>Heal +{0}</style> <style=cStack>(+{1} per stack)</style> more."
+	}
+}
