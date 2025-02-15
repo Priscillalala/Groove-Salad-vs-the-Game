@@ -11,6 +11,7 @@ using RoR2;
 
 namespace GSvs.RoR2.Items
 {
+    // TODO: finish buff icon and activation vfx
     [HarmonyPatch]
     [LanguageOverrides]
     [AssetManipulator]

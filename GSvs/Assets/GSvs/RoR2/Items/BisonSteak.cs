@@ -10,6 +10,7 @@ using System;
 
 namespace GSvs.RoR2.Items
 {
+    // TODO: something cute when healing
     [HarmonyPatch]
     [LanguageOverrides]
     public abstract class BisonSteak : ContentManipulator<BisonSteak>
